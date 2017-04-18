@@ -1,0 +1,225 @@
+{
+	"blorpcola.players": { "category": "block", "sounds": ["mcw:blorpcola"]},
+	"bandaid.players": { "category": "block", "sounds": ["mcw:bandaid"]},
+	"emptyjar.players": { "category": "block", "sounds": ["mcw:babyjarempty"]},
+	"barf.players": { "category": "block", "sounds": ["mcw:barf"]},
+"babymummy":{
+"category": "neutral",
+	"sounds": [
+	{"name": "mcw:babymummy1","stream": false},
+	{"name": "mcw:babymummy2","stream": false},
+	{"name": "mcw:babymummy3","stream": false},
+	{"name": "mcw:babymummy4","stream": false}
+				]
+	},
+"babymummy.hurt":{
+"category": "neutral",
+	"sounds": [
+	{"name": "mcw:babymummyhurt1","stream": false},
+	{"name": "mcw:babymummyhurt2","stream": false}
+				]
+	},
+"babymummy.death":{
+"category": "neutral",
+	"sounds": [
+	{"name": "mcw:babymummydeath1","stream": false}
+				]
+	},
+"mummy":{
+	"category": "hostile",
+	"sounds": [
+	{"name": "mcw:mummy1"},
+	{"name": "mcw:mummy2"},
+	{"name": "mcw:mummy3"},
+	{"name": "mcw:mummy4"}
+				]
+	},
+"mummy.hurth":{
+	"category": "hostile",
+	"sounds": [
+	{"name": "mcw:mummyhurt1"},
+	{"name": "mcw:mummyhurt2"}
+				]
+	},
+"mummy.death":{"category": "hostile", "sounds": ["mcw:mummydeath"]},
+"lolliman":{
+	"category": "master",
+	"sounds":[
+	{"name":"mcw:lolliman1", "stream":false},
+	{"name":"mcw:lolliman2", "stream":false},
+	{"name":"mcw:lolliman3", "stream":false},
+	{"name":"mcw:lolliman4", "stream":false},
+	{"name":"mcw:lolliman5", "stream":false},
+	{"name":"mcw:lolliman6", "stream":false},
+	{"name":"mcw:lolliman7", "stream":false}
+		]
+	},
+"lolliman.death":{
+	"category": "master",
+	"sounds":[
+	{"name":"mcw:lollimandeath1", "stream":false},
+	{"name":"mcw:lollimandeath2", "stream":false}
+		]
+	},
+"lolliman.explode":{
+	"category": "master",
+	"sounds":[
+	{"name":"mcw:lollimanexplode", "stream":false}
+		]
+	},
+"lolliman.hurt":{
+	"category": "master",
+	"sounds":[
+	{"name":"mcw:lollimanhurt1", "stream":false},
+	{"name":"mcw:lollimanhurt2", "stream":false},
+	{"name":"mcw:lollimanhurt3", "stream":false},
+	{"name":"mcw:lollimanhurt4", "stream":false},
+	{"name":"mcw:lollimanhurt5", "stream":false},
+	{"name":"mcw:lollimanhurt6", "stream":false},
+	{"name":"mcw:lollimanhurt7", "stream":false}
+		]
+	},
+"lolliman.takeoff":{
+	"category": "master",
+	"sounds":[
+	{"name":"mcw:lollimantakeoff1", "stream":false}
+		]
+	},
+"blorp":{
+"category": "neutral",
+	"sounds": [
+	{"name": "mcw:blorp1","stream": false},
+	{"name": "mcw:blorp2","stream": false},
+	{"name": "mcw:blorp3","stream": false},
+	{"name": "mcw:blorp4","stream": false},
+	{"name": "mcw:blorp5","stream": false}
+				]
+	},
+"blorp.bounce":{
+"category": "neutral",
+	"sounds": [
+	{"name": "mcw:blorpbounce1","stream": false},
+	{"name": "mcw:blorpbounce2","stream": false},
+	{"name": "mcw:blorpbounce3","stream": false},
+	{"name": "mcw:blorpbounce4","stream": false},
+	{"name": "mcw:blorpbounce5","stream": false},
+	{"name": "mcw:blorpbounce6","stream": false}
+				]
+	},
+"blorp.death":{
+"category": "neutral",
+	"sounds": [
+	{"name": "mcw:blorpdeath1","stream": false},
+	{"name": "mcw:blorpdeath2","stream": false}
+				]
+	},
+"blorp.eat":{
+"category": "neutral",
+	"sounds": [
+	{"name": "mcw:blorpeat","stream": false}
+				]
+	},
+"blorp.grow":{
+"category": "neutral",
+	"sounds": [
+	{"name": "mcw:blorpgrow","stream": false}
+				]
+	},
+"blorp.hurt":{
+"category": "neutral",
+	"sounds": [
+	{"name": "mcw:blorphurt1","stream": false},
+	{"name": "mcw:blorphurt2","stream": false},
+	{"name": "mcw:blorphurt3","stream": false}
+				]
+	},
+"bigbaby":{
+"category": "neutral",
+	"sounds": [
+	{"name": "mcw:bigbaby1","stream": false},
+	{"name": "mcw:bigbaby2","stream": false},
+	{"name": "mcw:bigbaby3","stream": false},
+	{"name": "mcw:bigbaby4","stream": false}
+				]
+	},
+"bigbaby.hurt":{
+"category": "neutral",
+	"sounds": [
+	{"name": "mcw:bigbabyhurt1","stream": false}
+				]
+	},
+"rockmonster":{
+	"category": "master",
+	"sounds":[
+	{"name":"rockmonster1", "stream":false},
+	{"name":"rockmonster2", "stream":false},
+	{"name":"rockmonster3", "stream":false},
+	{"name":"rockmonster4", "stream":false}
+		]
+	},
+"rockmonster.death":{
+	"category": "master",
+	"sounds":[
+	{"name":"mcw:rockmonsterdeath1", "stream":false},
+	{"name":"mcw:rockmonsterdeath2", "stream":false}
+		]
+	},
+"rockmonster.hurt":{
+	"category": "master",
+	"sounds":[
+	{"name":"mcw:rockmonsterhurt1", "stream":false},
+	{"name":"mcw:rockmonsterhurt2", "stream":false},
+	{"name":"mcw:rockmonsterhurt3", "stream":false}
+		]
+	},
+"invisibleman":{
+	"category": "master",
+	"sounds":[
+	{"name":"mcw:invisibleman1", "stream":false},
+	{"name":"mcw:invisibleman2", "stream":false},
+	{"name":"mcw:invisibleman3", "stream":false},
+	{"name":"mcw:invisibleman4", "stream":false},
+	{"name":"mcw:invisibleman5", "stream":false}
+		]
+	},
+"invisibleman.angry":{
+	"category": "master",
+	"sounds":[
+	{"name":"mcw:invisiblemanangry1", "stream":false},
+	{"name":"mcw:invisiblemanangry2", "stream":false},
+	{"name":"mcw:invisiblemanangry3", "stream":false},
+	{"name":"mcw:invisiblemanangry4", "stream":false},
+	{"name":"mcw:invisiblemanangry5", "stream":false},
+	{"name":"mcw:invisiblemanangry6", "stream":false},
+	{"name":"mcw:invisiblemanangry7", "stream":false},
+	{"name":"mcw:invisiblemanangry8", "stream":false},
+	{"name":"mcw:invisiblemanangry9", "stream":false},
+	{"name":"mcw:invisiblemanangry10", "stream":false},
+	{"name":"mcw:invisiblemanangry11", "stream":false}
+		]
+	},
+"invisibleman.death":{
+	"category": "master",
+	"sounds":[
+	{"name":"mcw:invisiblemandeath1", "stream":false},
+	{"name":"mcw:invisiblemandeath2", "stream":false}
+		]
+	},
+"invisibleman.forgetit":{
+	"category": "master",
+	"sounds":[
+	{"name":"mcw:invisiblemanforgetit", "stream":false}
+		]
+	},
+"invisibleman.hurt":{
+	"category": "master",
+	"sounds":[
+	{"name":"mcw:invisiblemanhurt1", "stream":false},
+	{"name":"mcw:invisiblemanhurt2", "stream":false},
+	{"name":"mcw:invisiblemanhurt3", "stream":false},
+	{"name":"mcw:invisiblemanhurt4", "stream":false},
+	{"name":"mcw:invisiblemanhurt5", "stream":false},
+	{"name":"mcw:invisiblemanhurt6", "stream":false}
+		]
+	}
+}

@@ -1,0 +1,16 @@
+#Other
+itemGroup.creepsTab=More Creeps And Weirdos Unofficial
+
+#Items
+item.Blorpcola.name=Blorp Cola
+item.Bandaid.name=Band Aid
+item.EmptyJar.name=Baby Jar (Empty)
+item.FullJar.name=Baby Jar (Full)
+
+#Entity
+entity.mcw.mummy.name=Mummy
+entity.mcw.lolliman.name=Lolliman
+entity.mcw.blorp.name=Blorp
+entity.mcw.bigbaby.name=Big Baby
+entity.mcw.rockmonster.name=Rock Monster 
+entity.mcw.invisibleman.name=Invisible Man
