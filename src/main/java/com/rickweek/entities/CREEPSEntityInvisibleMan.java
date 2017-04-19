@@ -75,7 +75,7 @@ public class CREEPSEntityInvisibleMan extends EntityMob
             texture = "mcw:textures/entity/invisiblemanmad.png";
             angerLevel = rand.nextInt(15) + 5;
         }
-    	this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(getAttackTarget() != null ? 0.75D : 0.5D);
+    	this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(getAttackTarget() != null ? 0.23000000717232513D : 0.23000000517232513D);
 
         if (rand.nextInt(30) == 0 && angerLevel > 0)
         {
@@ -99,7 +99,8 @@ public class CREEPSEntityInvisibleMan extends EntityMob
 			return CREEPSEntityInvisibleMan.this.findPlayerToAttack();
 		}
 		
-		/*
+		// TODO
+		/* 
 		public void updateTask()
 		{
 			float f = CREEPSEntityInvisibleMan.this.getDistanceToEntity(getAttackTarget());
@@ -114,8 +115,8 @@ public class CREEPSEntityInvisibleMan extends EntityMob
 			{
 				CREEPSEntityInvisibleMan.this.attackEntityAsMob(CREEPSEntityInvisibleMan.this.getAttackTarget());
 			}
-		}
-		*/
+		} */
+		
     }
     
     /**

@@ -19,5 +19,6 @@ public class Reference {
 	public static final String TEXTURE_BIGBABY4 = "bigbaby4.png";
 	public static final String TEXTURE_BIGBABY = "bigbaby";
 	public static final String TEXTURE_BIGBABYBOP = "bigbabybop.png";
+	public static final String TEXTURE_EVILLIGHTGLOW = "evillightglow.png";
 
 }

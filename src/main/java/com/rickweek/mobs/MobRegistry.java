@@ -9,21 +9,48 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 import com.rickweek.entities.CREEPSEntityBigBaby;
 import com.rickweek.entities.CREEPSEntityBlorp;
+import com.rickweek.entities.CREEPSEntityEvilChicken;
+import com.rickweek.entities.CREEPSEntityEvilCreature;
+import com.rickweek.entities.CREEPSEntityEvilLight;
+import com.rickweek.entities.CREEPSEntityEvilPig;
+import com.rickweek.entities.CREEPSEntityEvilScientist;
+import com.rickweek.entities.CREEPSEntityEvilSnowman;
 import com.rickweek.entities.CREEPSEntityInvisibleMan;
 import com.rickweek.entities.CREEPSEntityLolliman;
 import com.rickweek.entities.CREEPSEntityMummy;
+import com.rickweek.entities.CREEPSEntityPreacher;
+import com.rickweek.entities.CREEPSEntityRobotTed;
+import com.rickweek.entities.CREEPSEntityRobotTodd;
 import com.rickweek.entities.CREEPSEntityRockMonster;
 import com.rickweek.main.MCW;
 import com.rickweek.mob.renders.CREEPSRenderBabyMummy;
 import com.rickweek.mob.renders.CREEPSRenderBigBaby;
 import com.rickweek.mob.renders.CREEPSRenderBlorp;
+import com.rickweek.mob.renders.CREEPSRenderEvilChicken;
+import com.rickweek.mob.renders.CREEPSRenderEvilCreature;
+import com.rickweek.mob.renders.CREEPSRenderEvilLight;
+import com.rickweek.mob.renders.CREEPSRenderEvilPig;
+import com.rickweek.mob.renders.CREEPSRenderEvilScientist;
+import com.rickweek.mob.renders.CREEPSRenderEvilSnowman;
 import com.rickweek.mob.renders.CREEPSRenderInvisibleMan;
 import com.rickweek.mob.renders.CREEPSRenderLolliman;
+import com.rickweek.mob.renders.CREEPSRenderPreacher;
+import com.rickweek.mob.renders.CREEPSRenderRobotTed;
+import com.rickweek.mob.renders.CREEPSRenderRobotTodd;
 import com.rickweek.mob.renders.CREEPSRenderRockMonster;
 import com.rickweek.models.CREEPSModelBigBaby;
 import com.rickweek.models.CREEPSModelBlorp;
+import com.rickweek.models.CREEPSModelEvilChicken;
+import com.rickweek.models.CREEPSModelEvilCreature;
+import com.rickweek.models.CREEPSModelEvilLight;
+import com.rickweek.models.CREEPSModelEvilPig;
+import com.rickweek.models.CREEPSModelEvilScientist;
+import com.rickweek.models.CREEPSModelEvilSnowman;
 import com.rickweek.models.CREEPSModelLolliman;
 import com.rickweek.models.CREEPSModelMummy;
+import com.rickweek.models.CREEPSModelPreacher;
+import com.rickweek.models.CREEPSModelRobotTed;
+import com.rickweek.models.CREEPSModelRobotTodd;
 import com.rickweek.models.CREEPSModelRockMonster;
 
 public class MobRegistry {
@@ -43,26 +70,62 @@ public class MobRegistry {
 		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityBigBaby.class, new CREEPSRenderBigBaby(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelBigBaby(0.5F), 0.5F));
 		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityRockMonster.class, new CREEPSRenderRockMonster(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelRockMonster(0.5F), 0.5F));
 		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityInvisibleMan.class, new CREEPSRenderInvisibleMan(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelMummy(0.5F), 0.5F));
+		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityRobotTed.class, new CREEPSRenderRobotTed(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelRobotTed(0.5F), 0.5F));
+		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityRobotTodd.class, new CREEPSRenderRobotTodd(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelRobotTodd(0.5F), 0.5F));
+		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityEvilLight.class, new CREEPSRenderEvilLight(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelEvilLight(0.5F), 0.5F));
+		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityEvilSnowman.class, new CREEPSRenderEvilSnowman(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelEvilSnowman(0.5F), 0.5F));
+		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityEvilPig.class, new CREEPSRenderEvilPig(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelEvilPig(0.5F), 0.5F));
+		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityEvilCreature.class, new CREEPSRenderEvilCreature(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelEvilCreature(0.5F), 0.5F));
+		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityEvilChicken.class, new CREEPSRenderEvilChicken(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelEvilChicken(0.5F), 0.5F));
+		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityEvilScientist.class, new CREEPSRenderEvilScientist(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelEvilScientist(0.5F), 0.5F));
+		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityPreacher.class, new CREEPSRenderPreacher(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelPreacher(0.5F), 0.5F));
 	  }
 	  
 	  public static void registerEntity() {
-		  EntityRegistry.registerModEntity(CREEPSEntityMummy.class, "mummy", 300, MCW.instance, 64, 1, true, 16250871, 2106401);
+		    EntityRegistry.registerModEntity(CREEPSEntityMummy.class, "mummy", 300, MCW.instance, 64, 1, true, 16250871, 2106401);
 		    EntityRegistry.addSpawn(CREEPSEntityMummy.class, 11, 1, 1, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(BiomeDictionary.Type.DRY));
 		    
-		  EntityRegistry.registerModEntity(CREEPSEntityLolliman.class, "lolliman", 301, MCW.instance, 64, 1, true, 16250871, 2106401);
+		    EntityRegistry.registerModEntity(CREEPSEntityLolliman.class, "lolliman", 301, MCW.instance, 64, 1, true, 16250871, 2106401);
 		    EntityRegistry.addSpawn(CREEPSEntityLolliman.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
 		    
-		  EntityRegistry.registerModEntity(CREEPSEntityBlorp.class, "blorp", 302, MCW.instance, 64, 1, true, 16250871, 2106401);
+		    EntityRegistry.registerModEntity(CREEPSEntityBlorp.class, "blorp", 302, MCW.instance, 64, 1, true, 16250871, 2106401);
 		    EntityRegistry.addSpawn(CREEPSEntityBlorp.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
 		    
-		  EntityRegistry.registerModEntity(CREEPSEntityBigBaby.class, "bigbaby", 303, MCW.instance, 64, 1, true, 16250871, 2106401);
+		    EntityRegistry.registerModEntity(CREEPSEntityBigBaby.class, "bigbaby", 303, MCW.instance, 64, 1, true, 16250871, 2106401);
 		    EntityRegistry.addSpawn(CREEPSEntityBigBaby.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
 		  
-		  EntityRegistry.registerModEntity(CREEPSEntityRockMonster.class, "rockmonster", 304, MCW.instance, 64, 1, true, 16250871, 2106401);
+		    EntityRegistry.registerModEntity(CREEPSEntityRockMonster.class, "rockmonster", 304, MCW.instance, 64, 1, true, 16250871, 2106401);
 		    EntityRegistry.addSpawn(CREEPSEntityRockMonster.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
 		    
-		  EntityRegistry.registerModEntity(CREEPSEntityInvisibleMan.class, "invisibleman", 305, MCW.instance, 64, 1, true, 16250871, 2106401);
+		    EntityRegistry.registerModEntity(CREEPSEntityInvisibleMan.class, "invisibleman", 305, MCW.instance, 64, 1, true, 16250871, 2106401);
 			EntityRegistry.addSpawn(CREEPSEntityInvisibleMan.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
+			
+			EntityRegistry.registerModEntity(CREEPSEntityRobotTed.class, "robotted", 306, MCW.instance, 64, 1, true, 16250871, 2106401);
+			EntityRegistry.addSpawn(CREEPSEntityRobotTed.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
+			
+			EntityRegistry.registerModEntity(CREEPSEntityRobotTodd.class, "robottodd", 307, MCW.instance, 64, 1, true, 16250871, 2106401);
+			EntityRegistry.addSpawn(CREEPSEntityRobotTodd.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
+			
+			EntityRegistry.registerModEntity(CREEPSEntityEvilLight.class, "evillight", 308, MCW.instance, 64, 1, true, 16250871, 2106401);
+			EntityRegistry.addSpawn(CREEPSEntityEvilLight.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
+			
+			EntityRegistry.registerModEntity(CREEPSEntityEvilSnowman.class, "evilsnowman", 309, MCW.instance, 64, 1, true, 16250871, 2106401);
+			EntityRegistry.addSpawn(CREEPSEntityEvilSnowman.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
+			
+			EntityRegistry.registerModEntity(CREEPSEntityEvilPig.class, "evilpig", 310, MCW.instance, 64, 1, true, 16250871, 2106401);
+			EntityRegistry.addSpawn(CREEPSEntityEvilPig.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
+			
+			EntityRegistry.registerModEntity(CREEPSEntityEvilCreature.class, "evilcreature", 311, MCW.instance, 64, 1, true, 16250871, 2106401);
+			EntityRegistry.addSpawn(CREEPSEntityEvilCreature.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
+			
+			EntityRegistry.registerModEntity(CREEPSEntityEvilChicken.class, "evilchicken", 312, MCW.instance, 64, 1, true, 16250871, 2106401);
+			EntityRegistry.addSpawn(CREEPSEntityEvilChicken.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
+			
+			EntityRegistry.registerModEntity(CREEPSEntityEvilScientist.class, "evilscientist", 313, MCW.instance, 64, 1, true, 16250871, 2106401);
+			EntityRegistry.addSpawn(CREEPSEntityEvilScientist.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
+			
+			EntityRegistry.registerModEntity(CREEPSEntityPreacher.class, "preacher", 314, MCW.instance, 64, 1, true, 16250871, 2106401);
+			EntityRegistry.addSpawn(CREEPSEntityPreacher.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
 	  }
 	
 }

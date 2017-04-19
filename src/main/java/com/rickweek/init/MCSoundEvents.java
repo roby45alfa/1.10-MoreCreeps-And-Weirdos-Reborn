@@ -33,6 +33,7 @@ public class MCSoundEvents
   public static SoundEvent ITEM_ARMYGEM;
   public static SoundEvent ITEM_CAVEDRUMS;
   public static SoundEvent ITEM_STEREO;
+  public static SoundEvent ITEM_SPARK;
   public static SoundEvent BARF;
   public static SoundEvent ATOM;
   public static SoundEvent ATOM_BLOW;
@@ -381,7 +382,7 @@ public class MCSoundEvents
     ENTITY_SNOWMAN_HURT = registerSound("snowman.hurt");
     ENTITY_SNOWMAN_DEATH = registerSound("snowman.death");
     
-    ENTITY_EXPERIMENT_EXPLOSION = registerSound("experiment");
+    ENTITY_EXPERIMENT_EXPLOSION = registerSound("evilexplosion");
     
     ENTITY_EVIL_LAUGH = registerSound("evil.laugh");
     ENTITY_EVIL_HURT = registerSound("evil.hurt");

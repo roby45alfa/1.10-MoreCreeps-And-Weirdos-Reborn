@@ -21,6 +21,8 @@ public class MCW {
 	
 	@SidedProxy(serverSide = Reference.SERVER_PROXY_CLASS, clientSide = Reference.CLIENT_PROXY_CLASS)
 	public static CommonProxy proxy;
+
+	public int currentfine;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
