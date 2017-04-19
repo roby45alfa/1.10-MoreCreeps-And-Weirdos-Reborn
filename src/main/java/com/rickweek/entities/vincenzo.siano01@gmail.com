@@ -44,7 +44,7 @@ public class CREEPSEntityEvilPig extends EntityMob
     {
     	super.applyEntityAttributes();
     	this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(15D);
-    	this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.2300005D);
+    	this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23000005D);
     	this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(1D);
     }
 
