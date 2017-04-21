@@ -29,7 +29,7 @@ public class CREEPSRenderInvisibleMan extends RenderLiving
 
     protected ResourceLocation getEntityTexture(CREEPSEntityInvisibleMan entity)
     {
-		return new ResourceLocation(entity.texture);
+		return entity.texture;
 	}
 
 	protected ResourceLocation getEntityTexture(Entity entity) {

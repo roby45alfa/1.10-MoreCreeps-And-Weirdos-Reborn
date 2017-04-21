@@ -12,4 +12,9 @@ public class CommonProxy {
 			double posZ, int floattimer, double modelspeed) {		
 	}
 
+	public void addChatMessage(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

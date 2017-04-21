@@ -5,7 +5,11 @@ import com.rickweek.items.CREEPSItemBabyJarEmpty;
 import com.rickweek.items.CREEPSItemBabyJarFull;
 import com.rickweek.items.CREEPSItemBandAid;
 import com.rickweek.items.CREEPSItemBattery;
+import com.rickweek.items.CREEPSItemDonut;
 import com.rickweek.items.CREEPSItemEvilEgg;
+import com.rickweek.items.CREEPSItemGooDonut;
+import com.rickweek.items.CREEPSItemLolly;
+import com.rickweek.items.CREEPSItemMoney;
 import com.rickweek.items.CREEPSItemRam16K;
 import com.rickweek.main.Reference;
 import com.rickweek.main.utils.Utils;
@@ -25,6 +29,10 @@ public class MCItems {
 	public static Item Ram16K;
 	public static Item Battery;
 	public static Item EvilEgg;
+	public static Item Money;
+	public static Item Lolly;
+	public static Item GooDonut;
+	public static Item Donut;
 	
 	public static void init() {
 		Blorpcola = new Blorpcola("Blorpcola", "Blorpcola");
@@ -34,6 +42,10 @@ public class MCItems {
 		Ram16K = new CREEPSItemRam16K("Ram16K", "Ram16K");
 		Battery = new CREEPSItemBattery("Battery", "Battery");
 		EvilEgg = new CREEPSItemEvilEgg("EvilEgg", "EvilEgg");
+		Money = new CREEPSItemMoney("Money", "Money");
+		Lolly = new CREEPSItemLolly("Lolly", "Lolly");
+		GooDonut = new CREEPSItemGooDonut("GooDonut", "GooDonut");
+		Donut = new CREEPSItemDonut("Donut", "Donut");
 	}
 	
 	public static void register() {
@@ -44,6 +56,10 @@ public class MCItems {
 		registerItem(Ram16K);
 		registerItem(Battery);
 		registerItem(EvilEgg);
+		registerItem(Money);
+		registerItem(Lolly);
+		registerItem(GooDonut);
+		registerItem(Donut);
 	}
 	
 	public static void registerRenders() {
@@ -54,6 +70,10 @@ public class MCItems {
 		registerRender(Ram16K);
 		registerRender(Battery);
 		registerRender(EvilEgg);
+		registerRender(Money);
+		registerRender(Lolly);
+		registerRender(GooDonut);
+		registerRender(Donut);
 	}
 	
 	public static void registerItem(Item item) {

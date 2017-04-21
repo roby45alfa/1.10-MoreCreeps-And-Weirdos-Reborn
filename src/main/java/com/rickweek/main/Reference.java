@@ -20,5 +20,11 @@ public class Reference {
 	public static final String TEXTURE_BIGBABY = "bigbaby";
 	public static final String TEXTURE_BIGBABYBOP = "bigbabybop.png";
 	public static final String TEXTURE_EVILLIGHTGLOW = "evillightglow.png";
+	public static final String TEXTURE_BUM = "bum.png";
+	public static final String TEXTURE_BUM_DRESSED = "bumdressed.png";
+	public static final String TEXTURE_INVISIBLEMAN = "invisibleman.png";
+	public static final String TEXTURE_INVISIBLEMAN_MAD = "invisiblemanmad.png";
+	public static final String TEXTURE_LAWYER = "lawyerfromhell.png";
+	public static final String TEXTURE_LAWYER_UNDEAD = "lawyerfromhellundead.png";
 
 }

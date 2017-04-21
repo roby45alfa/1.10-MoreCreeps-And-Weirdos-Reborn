@@ -3,6 +3,7 @@ package com.rickweek.entities;
 import java.util.List;
 
 import com.rickweek.init.MCSoundEvents;
+import com.rickweek.main.Reference;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
@@ -24,6 +25,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.pathfinding.PathNavigateGround;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -38,12 +40,13 @@ public class CREEPSEntityInvisibleMan extends EntityMob
     private int angerLevel;
     private int randomSoundDelay;
     public float modelsize;
-    public String texture;
+    public ResourceLocation texture;
 
     public CREEPSEntityInvisibleMan(World world)
     {
         super(world);
-        texture = "mcw:textures/entity/invisibleman.png";
+        // texture = "mcw:textures/entity/invisibleman.png";
+        texture = new ResourceLocation(Reference.MODID, Reference.TEXTURE_PATH_ENTITES + Reference.TEXTURE_INVISIBLEMAN);
         angerLevel = 0;
         modelsize = 1.0F;
         this.tasks.addTask(0, new EntityAISwimming(this));
@@ -72,7 +75,8 @@ public class CREEPSEntityInvisibleMan extends EntityMob
     	Entity entity = source.getEntity();
         if ((getAttackTarget() instanceof EntityPlayer) && angerLevel == 0)
         {
-            texture = "mcw:textures/entity/invisiblemanmad.png";
+            // texture = "mcw:textures/entity/invisiblemanmad.png";
+            texture = new ResourceLocation(Reference.MODID, Reference.TEXTURE_PATH_ENTITES + Reference.TEXTURE_INVISIBLEMAN_MAD);
             angerLevel = rand.nextInt(15) + 5;
         }
     	this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(getAttackTarget() != null ? 0.23000000717232513D : 0.23000000517232513D);
@@ -85,7 +89,8 @@ public class CREEPSEntityInvisibleMan extends EntityMob
             {
                 worldObj.playSound((EntityPlayer) null, getPosition(), MCSoundEvents.ENTITY_INVISIBLEMAN_FORGETIT, SoundCategory.NEUTRAL, 1.0F, (rand.nextFloat() - rand.nextFloat()) * 0.2F + 1.0F);
                 this.setAttackTarget(null);
-                texture = "mcw:textures/entity/invisibleman.png";
+                // texture = "mcw:textures/entity/invisibleman.png";
+                texture = new ResourceLocation(Reference.MODID, Reference.TEXTURE_PATH_ENTITES + Reference.TEXTURE_INVISIBLEMAN);
             }
         }
 		return super.attackEntityFrom(source, amount);
@@ -159,7 +164,8 @@ public class CREEPSEntityInvisibleMan extends EntityMob
         }
         else
         {
-            texture = "mcw:textures/entity/invisiblemanmad.png";
+            // texture = "mcw:textures/entity/invisiblemanmad.png";
+            texture = new ResourceLocation(Reference.MODID, Reference.TEXTURE_PATH_ENTITES + Reference.TEXTURE_INVISIBLEMAN_MAD);
             return true;
         }
     }
@@ -216,7 +222,8 @@ public class CREEPSEntityInvisibleMan extends EntityMob
     {
     	setRevengeTarget((EntityLivingBase) entity);
         angerLevel += rand.nextInt(40);
-        texture = "mcw:textures/entity/invisiblemanmad.png";
+        // texture = "mcw:textures/entity/invisiblemanmad.png";
+        texture = new ResourceLocation(Reference.MODID, Reference.TEXTURE_PATH_ENTITES + Reference.TEXTURE_INVISIBLEMAN_MAD);
     }
 
     /**

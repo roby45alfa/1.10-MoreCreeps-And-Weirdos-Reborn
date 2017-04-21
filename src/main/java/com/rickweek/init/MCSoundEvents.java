@@ -105,9 +105,13 @@ public class MCSoundEvents
   public static SoundEvent ENTITY_LAWYER_SUCK;
   public static SoundEvent ENTITY_LAWYER_MONEYHIT;
   public static SoundEvent ENTITY_LAWYER_TAKE;
+  public static SoundEvent ENTITY_LAWYER_BUM;
+  public static SoundEvent ENTITY_LAWYER_BUSTED;
   public static SoundEvent ENTITY_PRISONER;
   public static SoundEvent ENTITY_PRISONER_HURT;
   public static SoundEvent ENTITY_PRISONER_DEATH;
+  public static SoundEvent ENTITY_PRISONER_REWARD;
+  public static SoundEvent ENTITY_PRISONER_SORRY;
   public static SoundEvent ENTITY_BLORP;
   public static SoundEvent ENTITY_BLORP_HURT;
   public static SoundEvent ENTITY_BLORP_DEATH;
@@ -411,10 +415,14 @@ public class MCSoundEvents
     ENTITY_LAWYER_SUCK = registerSound("lawyer.suck");
     ENTITY_LAWYER_TAKE = registerSound("lawyer.take");
     ENTITY_LAWYER_MONEYHIT = registerSound("lawyer.moneyhit");
+    ENTITY_LAWYER_BUM = registerSound("lawyer.bum");
+    ENTITY_LAWYER_BUSTED  = registerSound("lawyer.busted");
     
     ENTITY_PRISONER = registerSound("prisoner");
     ENTITY_PRISONER_HURT = registerSound("prisoner.hurt");
     ENTITY_PRISONER_DEATH = registerSound("prisoner.death");
+    ENTITY_PRISONER_REWARD = registerSound("prisoner.reward");
+    ENTITY_PRISONER_SORRY = registerSound("prisoner.sorry");
     
     ENTITY_BLORP = registerSound("blorp");
     ENTITY_BLORP_HURT = registerSound("blorp.hurt");
