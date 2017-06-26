@@ -1,16 +1,25 @@
 package com.rickweek.init;
 
 import com.rickweek.items.Blorpcola;
+import com.rickweek.items.CREEPSItemAtom;
 import com.rickweek.items.CREEPSItemBabyJarEmpty;
 import com.rickweek.items.CREEPSItemBabyJarFull;
 import com.rickweek.items.CREEPSItemBandAid;
 import com.rickweek.items.CREEPSItemBattery;
+import com.rickweek.items.CREEPSItemCavemanClub;
 import com.rickweek.items.CREEPSItemDonut;
+import com.rickweek.items.CREEPSItemEarthGem;
 import com.rickweek.items.CREEPSItemEvilEgg;
+import com.rickweek.items.CREEPSItemFireGem;
 import com.rickweek.items.CREEPSItemGooDonut;
+import com.rickweek.items.CREEPSItemHealingGem;
+import com.rickweek.items.CREEPSItemLifeGem;
 import com.rickweek.items.CREEPSItemLolly;
+import com.rickweek.items.CREEPSItemMiningGem;
 import com.rickweek.items.CREEPSItemMoney;
+import com.rickweek.items.CREEPSItemPopsicle;
 import com.rickweek.items.CREEPSItemRam16K;
+import com.rickweek.items.CREEPSItemSkyGem;
 import com.rickweek.main.Reference;
 import com.rickweek.main.utils.Utils;
 
@@ -33,6 +42,15 @@ public class MCItems {
 	public static Item Lolly;
 	public static Item GooDonut;
 	public static Item Donut;
+	public static Item Popsicle;
+	public static Item CaveClub;
+	public static Item HealingGem;
+	public static Item FireGem;
+	public static Item EarthGem;
+	public static Item MiningGem;
+	public static Item SkyGem;
+	public static Item LifeGem;
+	public static Item AtomPacket;
 	
 	public static void init() {
 		Blorpcola = new Blorpcola("Blorpcola", "Blorpcola");
@@ -46,6 +64,15 @@ public class MCItems {
 		Lolly = new CREEPSItemLolly("Lolly", "Lolly");
 		GooDonut = new CREEPSItemGooDonut("GooDonut", "GooDonut");
 		Donut = new CREEPSItemDonut("Donut", "Donut");
+		Popsicle = new CREEPSItemPopsicle("Popsicle", "Popsicle");
+		CaveClub = new CREEPSItemCavemanClub("CavemanClub", "CavemanClub");
+		HealingGem = new CREEPSItemHealingGem("HealingGem", "HealingGem");
+		FireGem = new CREEPSItemFireGem("FireGem", "FireGem");
+		EarthGem = new CREEPSItemEarthGem("EarthGem", "EarthGem");
+		MiningGem = new CREEPSItemMiningGem("MiningGem", "MiningGem");
+		SkyGem = new CREEPSItemSkyGem("SkyGem", "SkyGem");
+		LifeGem = new CREEPSItemLifeGem("LifeGem", "LifeGem");
+		AtomPacket = new CREEPSItemAtom("AtomPacket", "AtomPacket");
 	}
 	
 	public static void register() {
@@ -60,6 +87,15 @@ public class MCItems {
 		registerItem(Lolly);
 		registerItem(GooDonut);
 		registerItem(Donut);
+		registerItem(Popsicle);
+		registerItem(CaveClub);
+		registerItem(HealingGem);
+		registerItem(FireGem);
+		registerItem(EarthGem);
+		registerItem(MiningGem);
+		registerItem(SkyGem);
+		registerItem(LifeGem);
+		registerItem(AtomPacket);
 	}
 	
 	public static void registerRenders() {
@@ -74,6 +110,15 @@ public class MCItems {
 		registerRender(Lolly);
 		registerRender(GooDonut);
 		registerRender(Donut);
+		registerRender(Popsicle);
+		registerRender(CaveClub);
+		registerRender(HealingGem);
+		registerRender(FireGem);
+		registerRender(EarthGem);
+		registerRender(MiningGem);
+		registerRender(SkyGem);
+		registerRender(LifeGem);
+		registerRender(AtomPacket);
 	}
 	
 	public static void registerItem(Item item) {

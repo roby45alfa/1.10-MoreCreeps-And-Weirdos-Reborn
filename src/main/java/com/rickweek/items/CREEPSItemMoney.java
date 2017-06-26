@@ -2,6 +2,7 @@ package com.rickweek.items;
 
 import java.util.Random;
 
+import com.rickweek.entities.CREEPSEntityMoney;
 import com.rickweek.init.MCItems;
 import com.rickweek.init.MCSoundEvents;
 
@@ -9,6 +10,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
@@ -25,7 +29,7 @@ public class CREEPSItemMoney extends Item
     /**
      * Called whenever this item is equipped and the right mouse button is pressed. Args: itemStack, world, entityPlayer
      */
-    public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer)
+    public ActionResult<ItemStack> onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer, EnumHand hand)
     {
         checkAchievements(world, entityplayer);
         itemstack.stackSize--;
@@ -34,10 +38,10 @@ public class CREEPSItemMoney extends Item
 
         if (!world.isRemote)
         {
-            // TODO world.spawnEntityInWorld(new CREEPSEntityMoney(world, entityplayer));
+            world.spawnEntityInWorld(new CREEPSEntityMoney(world, entityplayer));
         }
 
-        return itemstack;
+        return new ActionResult(EnumActionResult.PASS, itemstack);
     }
 
     public void checkAchievements(World world, EntityPlayer entityplayer)

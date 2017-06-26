@@ -16,7 +16,6 @@ import com.rickweek.models.CREEPSModelMummy;
 
 public class CREEPSRenderPrisoner extends RenderLiving
 {
-    protected ModelBiped modelBipedMain;
 
     public CREEPSRenderPrisoner(RenderManager renderManagerIn, ModelBase modelbaseIn, float shadowsizeIn) {
 	    super(renderManagerIn, modelbaseIn, shadowsizeIn);

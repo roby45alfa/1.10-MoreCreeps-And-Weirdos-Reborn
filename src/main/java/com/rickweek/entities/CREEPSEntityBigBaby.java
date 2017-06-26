@@ -1,6 +1,7 @@
 package com.rickweek.entities;
 
-import net.minecraft.block.Block;
+import javax.annotation.Nullable;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -12,21 +13,22 @@ import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.pathfinding.PathNavigateGround;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 
 import com.rickweek.entities.ai.EntityBigBabyAI;
+import com.rickweek.init.MCItems;
 import com.rickweek.init.MCSoundEvents;
+import com.rickweek.main.MCW;
 import com.rickweek.main.Reference;
 
 public class CREEPSEntityBigBaby extends EntityMob
@@ -39,8 +41,7 @@ public class CREEPSEntityBigBaby extends EntityMob
     public ResourceLocation texture;
     public int attackTime;
 
-    public CREEPSEntityBigBaby(World world)
-    {
+    public CREEPSEntityBigBaby(World world) {
         super(world);
         texture = new ResourceLocation(Reference.MODID, Reference.TEXTURE_PATH_ENTITES + Reference.TEXTURE_BIGBABY0);
         setSize(width * 5.25F, height * 5.55F);
@@ -179,30 +180,30 @@ public class CREEPSEntityBigBaby extends EntityMob
     /**
      * Called when a player interacts with a mob. e.g. gets milk from a cow, gets into the saddle on a pig.
      */
-    // TODO
-    /*
-    public boolean interact(EntityPlayer entityplayer)
+    public boolean processInteract(EntityPlayer entityplayer, EnumHand hand, @Nullable ItemStack stack)
     {
         ItemStack itemstack = entityplayer.inventory.getCurrentItem();
 
-        if (itemstack != null && itemstack.getItem() == MoreCreepsAndWeirdos.babyjarempty)
+        if (itemstack != null && itemstack.getItem() == MCItems.EmpyJar)
         {
             if (modelsize < 1.0F)
             {
                 setDead();
-                entityplayer.inventory.setInventorySlotContents(entityplayer.inventory.currentItem, new ItemStack(MoreCreepsAndWeirdos.babyjarfull));
-                MoreCreepsAndWeirdos.proxy.addChatMessage("Now turn that Baby into a Schlump on the floor");
-                worldObj.playSoundAtEntity(this, "morecreeps:babytakehome", 1.0F, 1.0F);
+                entityplayer.inventory.setInventorySlotContents(entityplayer.inventory.currentItem, new ItemStack(MCItems.FullJar));
+                MCW.proxy.addChatMessage("Now turn that Baby into a Schlump on the floor");
+                // worldObj.playSoundAtEntity(this, "morecreeps:babytakehome", 1.0F, 1.0F);
+                worldObj.playSound((EntityPlayer) null, getPosition(), MCSoundEvents.ENTITY_BIGBABY_TAKEHOME, SoundCategory.NEUTRAL, 1.0F, 1.0F);
             }
             else
             {
-            	MoreCreepsAndWeirdos.proxy.addChatMessage("That baby is too large");
-                worldObj.playSoundAtEntity(this, "morecreeps:babyshrink", 1.0F, 1.0F);
+            	MCW.proxy.addChatMessage("That baby is too large");
+                // worldObj.playSoundAtEntity(this, "morecreeps:babyshrink", 1.0F, 1.0F);
+                worldObj.playSound((EntityPlayer) null, getPosition(), MCSoundEvents.ENTITY_BIGBABY_SHRINK, SoundCategory.NEUTRAL, 1.0F, 1.0F);
             }
         }
 
-        return true;
-    } */
+        return super.processInteract(entityplayer, hand, stack);
+    }
 
     public float getEyeHeight()
     {

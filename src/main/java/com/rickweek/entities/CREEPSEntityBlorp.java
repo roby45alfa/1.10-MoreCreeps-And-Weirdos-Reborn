@@ -1,9 +1,5 @@
 package com.rickweek.entities;
 
-import com.rickweek.entities.ai.EntityBlorpAI;
-import com.rickweek.init.MCItems;
-import com.rickweek.init.MCSoundEvents;
-
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
@@ -14,11 +10,10 @@ import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
-import net.minecraft.entity.passive.EntityAnimal;
+import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.pathfinding.PathNavigateGround;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
@@ -27,7 +22,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
-public class CREEPSEntityBlorp extends EntityAnimal
+import com.rickweek.entities.ai.EntityBlorpAI;
+import com.rickweek.init.MCItems;
+import com.rickweek.init.MCSoundEvents;
+
+public class CREEPSEntityBlorp extends EntityMob
 {
     public double attackrange;
     public boolean bone;
@@ -70,6 +69,7 @@ public class CREEPSEntityBlorp extends EntityAnimal
     	super.applyEntityAttributes();
     	this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(25D);
     	this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23000000517232513D);
+    	this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(1.0D);
     }
 
     /**
@@ -119,7 +119,7 @@ public class CREEPSEntityBlorp extends EntityAnimal
                     float health = this.getHealth();
                     health = 10 * blorplevel + 25;
                     setSize(width * blorpsize, 2.0F + height * blorpsize);
-                    // TODO worldObj.playSoundAtEntity(this, "morecreeps:blorpgrow", 1.0F, (rand.nextFloat() - rand.nextFloat()) * 0.2F + 1.0F);
+                    // worldObj.playSoundAtEntity(this, "morecreeps:blorpgrow", 1.0F, (rand.nextFloat() - rand.nextFloat()) * 0.2F + 1.0F);
                     worldObj.playSound((EntityPlayer) null, getPosition(), MCSoundEvents.ENTITY_BLORP_GROW, SoundCategory.NEUTRAL, 1.0F, (rand.nextFloat() - rand.nextFloat()) * 0.2F + 1.0F);
                 }
 
@@ -176,6 +176,7 @@ public class CREEPSEntityBlorp extends EntityAnimal
             return -(float)bp.getY();
         }
     }
+    
     public void faceTreeTop(int i, int j, int k, float f)
     {
         double d = (double)i - posX;
@@ -190,20 +191,34 @@ public class CREEPSEntityBlorp extends EntityAnimal
     /**
      * Called when the entity is attacked.
      */
-    public boolean attackEntityFrom(DamageSource damagesource, float f)
+    public boolean attackEntityFrom(DamageSource source, float amount)
     {
-        Entity entity = damagesource.getEntity();
-
-        if (entity instanceof EntityPlayer)
+        if (this.isEntityInvulnerable(source))
         {
-            angry = true;
+            return false;
         }
+        else
+        {
+            Entity entity = source.getEntity();
 
-        hungry = false;
-        hungrytime = 100;
-        EntityLivingBase entityToAttack = getAttackTarget();
-        entityToAttack = (EntityLivingBase) entity;
-        return super.attackEntityFrom(damagesource, f);
+            if (entity instanceof EntityPlayer)
+            {
+                this.becomeAngryAt(entity);
+            }
+
+            return super.attackEntityFrom(source, amount);
+        }
+    }
+
+    /**
+     * Causes this PigZombie to become angry at the supplied Entity (which will be a player).
+     */
+    private void becomeAngryAt(Entity p_70835_1_)
+    {
+        if (p_70835_1_ instanceof EntityLivingBase)
+        {
+            this.setRevengeTarget((EntityLivingBase)p_70835_1_);
+        }
     }
 
     /**
@@ -366,10 +381,4 @@ public class CREEPSEntityBlorp extends EntityAnimal
     {
         return 3;
     }
-
-	@Override
-	public EntityAgeable createChild(EntityAgeable ageable)
-	{
-		return new CREEPSEntityBlorp(worldObj);
-	}
 }

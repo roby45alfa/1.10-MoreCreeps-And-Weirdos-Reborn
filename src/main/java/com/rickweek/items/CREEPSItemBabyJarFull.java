@@ -1,12 +1,18 @@
 package com.rickweek.items;
 
+import com.rickweek.entities.CREEPSEntitySchlump;
+import com.rickweek.init.MCItems;
 import com.rickweek.init.MCSoundEvents;
+import com.rickweek.main.MCW;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -31,7 +37,7 @@ public class CREEPSItemBabyJarFull extends Item
     /**
      * Called whenever this item is equipped and the right mouse button is pressed. Args: itemStack, world, entityPlayer
      */
-    public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer)
+    public ActionResult<ItemStack> onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer, EnumHand hand)
     {
         if (entityplayer.isSneaking())
         {
@@ -39,11 +45,11 @@ public class CREEPSItemBabyJarFull extends Item
             itemstack.stackSize--;
 
             // TODO
-            /* 
+            
             if(world.isRemote)
             {
-            	MoreCreepsAndWeirdos.proxy.barf(world, entityplayer);
-            } */
+            	MCW.proxy.barf(world, entityplayer);
+            } 
 
             placedelay = 30;
             entityplayer.heal(healAmount);
@@ -70,11 +76,10 @@ public class CREEPSItemBabyJarFull extends Item
 
             if (movingobjectposition == null)
             {
-                return itemstack;
+                return new ActionResult(EnumActionResult.PASS, itemstack);
             }
 
-            /* if (movingobjectposition.typeOfHit == RayTraceResult.MovingObjectType.BLOCK)
-            {
+            
                 int k = movingobjectposition.getBlockPos().getX();
                 int l = movingobjectposition.getBlockPos().getY() + 1;
                 int i1 = movingobjectposition.getBlockPos().getZ();
@@ -83,11 +88,10 @@ public class CREEPSItemBabyJarFull extends Item
                 creepsentityschlump.setLocationAndAngles(k, l, i1, entityplayer.rotationYaw, 0.0F);
                 world.spawnEntityInWorld(creepsentityschlump);
                 placedelay = 30;
-                return new ItemStack(MoreCreepsAndWeirdos.babyjarempty);
-            } */
+            
         }
 
-        return itemstack;
+        return new ActionResult(EnumActionResult.PASS, itemstack);
     }
 
     /**

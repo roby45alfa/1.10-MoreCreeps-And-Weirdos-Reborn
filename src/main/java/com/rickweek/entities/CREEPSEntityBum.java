@@ -25,6 +25,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
 import com.rickweek.init.MCSoundEvents;
+import com.rickweek.main.MCW;
 import com.rickweek.main.Reference;
 
 public class CREEPSEntityBum extends EntityMob
@@ -96,11 +97,10 @@ public class CREEPSEntityBum extends EntityMob
                 motionY -= 0.5D;
             }
             
-            // TODO
-            /*
+            /* TODO
             if(worldObj.isRemote)
             {
-            	MoreCreepsAndWeirdos.proxy.pee(worldObj, posX, posY, posZ, rotationYaw, modelsize);
+            	MCW.proxy.pee(worldObj, posX, posY, posZ, rotationYaw, modelsize);
             } */
 
             if (timetopee < -200)

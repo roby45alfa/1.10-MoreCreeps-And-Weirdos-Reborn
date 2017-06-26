@@ -7,65 +7,99 @@ import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
+import com.rickweek.entities.CREEPSEntityAtom;
 import com.rickweek.entities.CREEPSEntityBigBaby;
 import com.rickweek.entities.CREEPSEntityBlorp;
 import com.rickweek.entities.CREEPSEntityBum;
+import com.rickweek.entities.CREEPSEntityCamelJockey;
+import com.rickweek.entities.CREEPSEntityCastleCritter;
 import com.rickweek.entities.CREEPSEntityCastleGuard;
+import com.rickweek.entities.CREEPSEntityCaveman;
+import com.rickweek.entities.CREEPSEntityDigBug;
 import com.rickweek.entities.CREEPSEntityEvilChicken;
 import com.rickweek.entities.CREEPSEntityEvilCreature;
 import com.rickweek.entities.CREEPSEntityEvilLight;
 import com.rickweek.entities.CREEPSEntityEvilPig;
 import com.rickweek.entities.CREEPSEntityEvilScientist;
 import com.rickweek.entities.CREEPSEntityEvilSnowman;
+import com.rickweek.entities.CREEPSEntityG;
+import com.rickweek.entities.CREEPSEntityHunchback;
+import com.rickweek.entities.CREEPSEntityHunchbackSkeleton;
 import com.rickweek.entities.CREEPSEntityInvisibleMan;
 import com.rickweek.entities.CREEPSEntityLawyerFromHell;
 import com.rickweek.entities.CREEPSEntityLolliman;
 import com.rickweek.entities.CREEPSEntityMummy;
 import com.rickweek.entities.CREEPSEntityPreacher;
 import com.rickweek.entities.CREEPSEntityPrisoner;
+import com.rickweek.entities.CREEPSEntityPyramidGuardian;
 import com.rickweek.entities.CREEPSEntityRatMan;
 import com.rickweek.entities.CREEPSEntityRobotTed;
 import com.rickweek.entities.CREEPSEntityRobotTodd;
 import com.rickweek.entities.CREEPSEntityRockMonster;
+import com.rickweek.entities.CREEPSEntitySchlump;
+import com.rickweek.entities.CREEPSEntityThief;
+import com.rickweek.entities.CREEPSEntityTrophy;
 import com.rickweek.main.MCW;
+import com.rickweek.mob.renders.CREEPSRenderAtom;
 import com.rickweek.mob.renders.CREEPSRenderBabyMummy;
 import com.rickweek.mob.renders.CREEPSRenderBigBaby;
 import com.rickweek.mob.renders.CREEPSRenderBlorp;
 import com.rickweek.mob.renders.CREEPSRenderBum;
+import com.rickweek.mob.renders.CREEPSRenderCamelJockey;
+import com.rickweek.mob.renders.CREEPSRenderCastleCritter;
 import com.rickweek.mob.renders.CREEPSRenderCastleGuard;
+import com.rickweek.mob.renders.CREEPSRenderCaveman;
+import com.rickweek.mob.renders.CREEPSRenderDigBug;
 import com.rickweek.mob.renders.CREEPSRenderEvilChicken;
 import com.rickweek.mob.renders.CREEPSRenderEvilCreature;
 import com.rickweek.mob.renders.CREEPSRenderEvilLight;
 import com.rickweek.mob.renders.CREEPSRenderEvilPig;
 import com.rickweek.mob.renders.CREEPSRenderEvilScientist;
 import com.rickweek.mob.renders.CREEPSRenderEvilSnowman;
+import com.rickweek.mob.renders.CREEPSRenderG;
+import com.rickweek.mob.renders.CREEPSRenderHunchback;
+import com.rickweek.mob.renders.CREEPSRenderHunchbackSkeleton;
 import com.rickweek.mob.renders.CREEPSRenderInvisibleMan;
 import com.rickweek.mob.renders.CREEPSRenderLawyerFromHell;
 import com.rickweek.mob.renders.CREEPSRenderLolliman;
 import com.rickweek.mob.renders.CREEPSRenderPreacher;
 import com.rickweek.mob.renders.CREEPSRenderPrisoner;
+import com.rickweek.mob.renders.CREEPSRenderPyramidGuardian;
 import com.rickweek.mob.renders.CREEPSRenderRatMan;
 import com.rickweek.mob.renders.CREEPSRenderRobotTed;
 import com.rickweek.mob.renders.CREEPSRenderRobotTodd;
 import com.rickweek.mob.renders.CREEPSRenderRockMonster;
+import com.rickweek.mob.renders.CREEPSRenderSchlump;
+import com.rickweek.mob.renders.CREEPSRenderThief;
+import com.rickweek.mob.renders.CREEPSRenderTrophy;
+import com.rickweek.models.CREEPSModelAtom;
 import com.rickweek.models.CREEPSModelBigBaby;
 import com.rickweek.models.CREEPSModelBlorp;
 import com.rickweek.models.CREEPSModelBum;
+import com.rickweek.models.CREEPSModelCamelJockey;
+import com.rickweek.models.CREEPSModelCastleCritter;
 import com.rickweek.models.CREEPSModelCastleGuard;
+import com.rickweek.models.CREEPSModelCaveman;
+import com.rickweek.models.CREEPSModelDigBug;
 import com.rickweek.models.CREEPSModelEvilChicken;
 import com.rickweek.models.CREEPSModelEvilCreature;
 import com.rickweek.models.CREEPSModelEvilLight;
 import com.rickweek.models.CREEPSModelEvilPig;
 import com.rickweek.models.CREEPSModelEvilScientist;
 import com.rickweek.models.CREEPSModelEvilSnowman;
+import com.rickweek.models.CREEPSModelG;
+import com.rickweek.models.CREEPSModelHunchback;
 import com.rickweek.models.CREEPSModelLawyerFromHell;
 import com.rickweek.models.CREEPSModelLolliman;
 import com.rickweek.models.CREEPSModelMummy;
 import com.rickweek.models.CREEPSModelPreacher;
+import com.rickweek.models.CREEPSModelPyramidGuardian;
 import com.rickweek.models.CREEPSModelRatMan;
 import com.rickweek.models.CREEPSModelRobotTed;
 import com.rickweek.models.CREEPSModelRobotTodd;
 import com.rickweek.models.CREEPSModelRockMonster;
+import com.rickweek.models.CREEPSModelSchlump;
+import com.rickweek.models.CREEPSModelTrophy;
 
 public class MobRegistry {
 
@@ -76,6 +110,7 @@ public class MobRegistry {
 	    registerEntity();
 	  }
 	  
+	  // The registerEntityRenderingHandler have to change ASAP because this method is deprecated
 	  public static void registerRender() {
 		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityMummy.class, new CREEPSRenderBabyMummy(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelMummy(0.5F), 0.5F));
 		  // TODO RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityBabyMummy.class, new CREEPSRenderBabyMummy(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelMummy(0.5F), 0.5F));
@@ -98,6 +133,18 @@ public class MobRegistry {
 		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityRatMan.class, new CREEPSRenderRatMan(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelRatMan(0.5F), 0.5F));
 		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityBum.class, new CREEPSRenderBum(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelBum(0.5F), 0.5F));
 		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityCastleGuard.class, new CREEPSRenderCastleGuard(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelCastleGuard(0.5F), 0.5F));
+		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityThief.class, new CREEPSRenderThief(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelMummy(0.5F), 0.5F));
+		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityCaveman.class, new CREEPSRenderCaveman(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelCaveman(0.5F), 0.5F));
+		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityDigBug.class, new CREEPSRenderDigBug(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelDigBug(0.5F), 0.5F));
+		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityG.class, new CREEPSRenderG(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelG(0.5F), 0.5F));
+		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityPyramidGuardian.class, new CREEPSRenderPyramidGuardian(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelPyramidGuardian(0.5F), 0.5F));
+		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityCamelJockey.class, new CREEPSRenderCamelJockey(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelCamelJockey(0.5F), 0.5F));
+		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityCastleCritter.class, new CREEPSRenderCastleCritter(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelCastleCritter(0.5F), 0.5F));
+		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityHunchbackSkeleton.class, new CREEPSRenderHunchbackSkeleton(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelMummy(0.5F), 0.5F));
+		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityHunchback.class, new CREEPSRenderHunchback(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelHunchback(0.5F), 0.5F));
+		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntitySchlump.class, new CREEPSRenderSchlump(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelSchlump(0.5F), 0.5F));
+		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityTrophy.class, new CREEPSRenderTrophy(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelTrophy(0.5F), 0.5F));
+		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityAtom.class, new CREEPSRenderAtom(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelAtom(0.5F), 0.5F));
 		  
 	  }
 	  
@@ -161,6 +208,42 @@ public class MobRegistry {
 			
 			EntityRegistry.registerModEntity(CREEPSEntityCastleGuard.class, "castleguard", 319, MCW.instance, 64, 1, true, 16250871, 2106401);
 			EntityRegistry.addSpawn(CREEPSEntityCastleGuard.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
+			
+			EntityRegistry.registerModEntity(CREEPSEntityThief.class, "thief", 320, MCW.instance, 64, 1, true, 16250871, 2106401);
+			EntityRegistry.addSpawn(CREEPSEntityThief.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
+			
+			EntityRegistry.registerModEntity(CREEPSEntityCaveman.class, "caveman", 321, MCW.instance, 64, 1, true, 16250871, 2106401);
+			EntityRegistry.addSpawn(CREEPSEntityCaveman.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
+			
+			EntityRegistry.registerModEntity(CREEPSEntityDigBug.class, "digbug", 322, MCW.instance, 64, 1, true, 16250871, 2106401);
+			EntityRegistry.addSpawn(CREEPSEntityDigBug.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
+			
+			EntityRegistry.registerModEntity(CREEPSEntityG.class, "g", 323, MCW.instance, 64, 1, true, 16250871, 2106401);
+			EntityRegistry.addSpawn(CREEPSEntityG.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
+			
+			EntityRegistry.registerModEntity(CREEPSEntityPyramidGuardian.class, "pyramidguardian", 324, MCW.instance, 64, 1, true, 16250871, 2106401);
+			EntityRegistry.addSpawn(CREEPSEntityPyramidGuardian.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
+			
+			EntityRegistry.registerModEntity(CREEPSEntityCamelJockey.class, "cameljockey", 325, MCW.instance, 64, 1, true, 16250871, 2106401);
+			EntityRegistry.addSpawn(CREEPSEntityCamelJockey.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
+			
+			EntityRegistry.registerModEntity(CREEPSEntityCastleCritter.class, "castlecritter", 326, MCW.instance, 64, 1, true, 16250871, 2106401);
+			EntityRegistry.addSpawn(CREEPSEntityCastleCritter.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
+			
+			EntityRegistry.registerModEntity(CREEPSEntityHunchbackSkeleton.class, "hunchbackskeleton", 327, MCW.instance, 64, 1, true, 16250871, 2106401);
+			EntityRegistry.addSpawn(CREEPSEntityHunchbackSkeleton.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
+			
+			EntityRegistry.registerModEntity(CREEPSEntityHunchback.class, "hunchback", 328, MCW.instance, 64, 1, true, 16250871, 2106401);
+			EntityRegistry.addSpawn(CREEPSEntityHunchback.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
+			
+			EntityRegistry.registerModEntity(CREEPSEntitySchlump.class, "schlump", 329, MCW.instance, 64, 1, true, 16250871, 2106401);
+			EntityRegistry.addSpawn(CREEPSEntitySchlump.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
+			
+			EntityRegistry.registerModEntity(CREEPSEntityTrophy.class, "trophy", 330, MCW.instance, 64, 1, true, 16250871, 2106401);
+			EntityRegistry.addSpawn(CREEPSEntityTrophy.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
+			
+			EntityRegistry.registerModEntity(CREEPSEntityAtom.class, "atom", 331, MCW.instance, 64, 1, true, 16250871, 2106401);
+			EntityRegistry.addSpawn(CREEPSEntityAtom.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
 	  }
 	
 }

@@ -26,5 +26,6 @@ public class Reference {
 	public static final String TEXTURE_INVISIBLEMAN_MAD = "invisiblemanmad.png";
 	public static final String TEXTURE_LAWYER = "lawyerfromhell.png";
 	public static final String TEXTURE_LAWYER_UNDEAD = "lawyerfromhellundead.png";
+	public static final String TEXTURE_ATOM = "atom.png";
 
 }

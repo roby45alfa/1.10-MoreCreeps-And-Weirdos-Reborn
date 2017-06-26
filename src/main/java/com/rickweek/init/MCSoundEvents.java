@@ -144,6 +144,7 @@ public class MCSoundEvents
   public static SoundEvent ENTITY_RATMAN_SCRATCH;
   public static SoundEvent ENTITY_DIGBUG;
   public static SoundEvent ENTITY_DIGBUG_HURT;
+  public static SoundEvent ENTITY_DIGBUG_EAT;
   public static SoundEvent ENTITY_DIGBUG_DEATH;
   public static SoundEvent ENTITY_DIGBUG_CALL;
   public static SoundEvent ENTITY_DIGBUG_DIG;
@@ -205,6 +206,7 @@ public class MCSoundEvents
   public static SoundEvent ENTITY_HUNCHBACK_THANKYOU;
   public static SoundEvent ENTITY_HUNCHBACK_ARMY;
   public static SoundEvent ENTITY_HUNCHBACK_THANKS;
+  public static SoundEvent ENTITY_GGPIGARMOR;
   public static SoundEvent ENTITY_MANDOG;
   public static SoundEvent ENTITY_MANDOG_HURT;
   public static SoundEvent ENTITY_MANDOG_DEATH;
@@ -315,7 +317,7 @@ public class MCSoundEvents
     ITEM_GEMSWORD = registerSound("gemsword.players");
     ITEM_FIREGEM = registerSound("firegem.players");
     ITEM_EARTHGEM = registerSound("earthgem.players");
-    ITEM_HEALINGGEM = registerSound("healing.players");
+    ITEM_HEALINGGEM = registerSound("healinggem.players");
     ITEM_FIREEXT = registerSound("fireext.players");
     ITEM_BATTERY = registerSound("battery.players");
     ITEM_HARDCANDY = registerSound("hardcandy.players");
@@ -462,6 +464,7 @@ public class MCSoundEvents
     ENTITY_RATMAN_HURT = registerSound("ratman.hurt");
     
     ENTITY_DIGBUG = registerSound("digbug");
+    ENTITY_DIGBUG_EAT = registerSound("digbug.eat");
     ENTITY_DIGBUG_HURT = registerSound("digbug.hurt");
     ENTITY_DIGBUG_DEATH = registerSound("digbug.death");
     ENTITY_DIGBUG_CALL = registerSound("digbug.call");
@@ -532,6 +535,8 @@ public class MCSoundEvents
     ENTITY_HUNCHBACK_THANKYOU = registerSound("hunchback.thankyou");
     ENTITY_HUNCHBACK_ARMY = registerSound("hunchback.army");
     ENTITY_HUNCHBACK_THANKS = registerSound("hunchback.thanks");
+    
+    ENTITY_GGPIGARMOR = registerSound("ggpigarmor");
     
     ENTITY_MANDOG = registerSound("mandog");
     ENTITY_MANDOG_HURT = registerSound("mandog.hurt");
