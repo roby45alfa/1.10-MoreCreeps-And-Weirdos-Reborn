@@ -14,7 +14,6 @@ public class MCSoundEvents
   public static SoundEvent ITEM_SKYGEMDOWN;
   public static SoundEvent ITEM_SHRINKRAY;
   public static SoundEvent ITEM_RAYGUN;
-  public static SoundEvent ITEM_MOBILEPHONE;
   public static SoundEvent ITEM_LOLLY;
   public static SoundEvent ITEM_MININGGEM;
   public static SoundEvent ITEM_MININGGEM_BAD;
@@ -34,6 +33,10 @@ public class MCSoundEvents
   public static SoundEvent ITEM_CAVEDRUMS;
   public static SoundEvent ITEM_STEREO;
   public static SoundEvent ITEM_SPARK;
+  public static SoundEvent ITEM_MOBILE;
+  public static SoundEvent ITEM_EXTINGUISHER;
+  public static SoundEvent ITEM_GGPIGRADIO;
+  public static SoundEvent ITEM_HORSEHEADGEM;
   public static SoundEvent BARF;
   public static SoundEvent ATOM;
   public static SoundEvent ATOM_BLOW;
@@ -155,6 +158,7 @@ public class MCSoundEvents
   public static SoundEvent ENTITY_SNEAKSAL_RATS;
   public static SoundEvent ENTITY_SNEAKSAL_SALE;
   public static SoundEvent ENTITY_SNEAKSAL_NOMONEY;
+  public static SoundEvent ENTITY_SNEAKSAL_salnobodyshrinks;
   public static SoundEvent ENTITY_PREACHER;
   public static SoundEvent ENTITY_PREACHER_BURN;
   public static SoundEvent ENTITY_PREACHER_HURT;
@@ -253,6 +257,8 @@ public class MCSoundEvents
   public static SoundEvent ENTITY_GOOGOAT_DEATH;
   public static SoundEvent ENTITY_HORSEHEAD;
   public static SoundEvent ENTITY_HORSEHEAD_BLASTOFF;
+  public static SoundEvent ENTITY_GGPIG_MOUNT;
+  public static SoundEvent ENTITY_GGPIG_UNMOUNT;
   
   public MCSoundEvents() {}
   
@@ -269,6 +275,9 @@ public class MCSoundEvents
     SCHLUMP = registerSound("schlump");
     SCHLUMP_HURT = registerSound("schlump.hurt");
     SCHLUMP_DEATH = registerSound("schlump.death");
+    
+    ENTITY_GGPIG_UNMOUNT = registerSound("ggpig.unmount");
+    ENTITY_GGPIG_MOUNT = registerSound("ggpig.mount");
     
     ENTITY_HORSEHEAD = registerSound("horsehead");
     ENTITY_HORSEHEAD_BLASTOFF = registerSound("horsehead.blastoff");
@@ -299,6 +308,8 @@ public class MCSoundEvents
     ENTITY_DESERTLIZARD_DEATH = registerSound("desertlizard.death");
     ENTITY_DESERTLIZARD_FIREBALL = registerSound("desertlizard.fireball");
     
+    ITEM_HORSEHEADGEM = registerSound("horseheadgem.players");
+    ITEM_GGPIGRADIO = registerSound("ggpigradio.players");
     ITEM_BLORPCOLA = registerSound("blorpcola.players");
     ITEM_CHEW = registerSound("chew.players");
     ITEM_BANDAID = registerSound("bandaid.players");
@@ -307,7 +318,6 @@ public class MCSoundEvents
     ITEM_SKYGEMDOWN = registerSound("skygemdown.players");
     ITEM_SHRINKRAY = registerSound("shrinkray.players");
     ITEM_RAYGUN = registerSound("raygun.players");
-    ITEM_MOBILEPHONE = registerSound("mobilephone.players");
     ITEM_LOLLY = registerSound("lolly.players");
     ITEM_MININGGEM = registerSound("mininggem.players");
     ITEM_MININGGEM_BAD = registerSound("mininggembad.players");
@@ -339,6 +349,8 @@ public class MCSoundEvents
     EVILEGGCLUCK = registerSound("evileggcluck.players");
     EVILEGGBIRTH = registerSound("evileggbirth.players");
     ITEM_DIODES = registerSound("diodes.players");
+    ITEM_MOBILE = registerSound("mobilephone.players");
+    ITEM_EXTINGUISHER = registerSound("extinguisher.players");
     
     ENTITY_MUMMY = registerSound("mummy");
     ENTITY_MUMMY_HURT = registerSound("mummy.hurth");
@@ -477,6 +489,7 @@ public class MCSoundEvents
     ENTITY_SNEAKSAL_RATS = registerSound("sneakysal.rats");
     ENTITY_SNEAKSAL_SALE = registerSound("sneakysal.sale");
     ENTITY_SNEAKSAL_NOMONEY = registerSound("sneakysal.nomoney");
+    ENTITY_SNEAKSAL_salnobodyshrinks = registerSound("sneakysal.salnobodyshrinks");
     
     ENTITY_PREACHER = registerSound("preacher");
     ENTITY_PREACHER_HURT = registerSound("preacher.hurt");
@@ -537,6 +550,7 @@ public class MCSoundEvents
     ENTITY_HUNCHBACK_THANKS = registerSound("hunchback.thanks");
     
     ENTITY_GGPIGARMOR = registerSound("ggpigarmor");
+    
     
     ENTITY_MANDOG = registerSound("mandog");
     ENTITY_MANDOG_HURT = registerSound("mandog.hurt");

@@ -4,13 +4,57 @@
 	"emptyjar.players": { "category": "block", "sounds": ["mcw:babyjarempty"]},
 	"barf.players": { "category": "block", "sounds": ["mcw:barf"]},
 	"battery.players": { "category": "block", "sounds": ["mcw:spark"]},
+	"shrinkray.players": { "category": "block", "sounds": ["mcw:shrinkray"]},
 	"lolly.players": { "category": "block", "sounds": [
 	{"name": "mcw:lolly1","stream": false},
 	{"name": "mcw:lolly2","stream": false}
 				]
 	},
+	"extinguisher.players": { "category": "block", "sounds": ["mcw:extinguisher"]},
+	"shrinkkill.players": { "category": "block", "sounds": ["mcw:shrinkkill"]},
 	"chew.players": { "category": "block", "sounds": ["mcw:chew"]},
 	"lick.players": { "category": "block", "sounds": ["mcw:lick"]},
+	"growray.players": { "category": "block", "sounds": ["mcw:growray"]},
+	"gemsword.players": { "category": "block", "sounds": ["mcw:gemsword"]},
+	"ggpigradio.players": { "category": "block", "sounds": ["mcw:ggpigradio"]},
+	"horseheadgem.players": { "category": "block", "sounds": ["mcw:horseheadgem"]},
+	"mobilephone.players": { "category": "block", "sounds": [
+	{"name": "mcw:mobile1","stream": false},
+	{"name": "mcw:mobile2","stream": false},
+	{"name": "mcw:mobile3","stream": false},
+	{"name": "mcw:mobile4","stream": false},
+	{"name": "mcw:mobile5","stream": false},
+	{"name": "mcw:mobile6","stream": false},
+	{"name": "mcw:mobile7","stream": false},
+	{"name": "mcw:mobile8","stream": false},
+	{"name": "mcw:mobile9","stream": false},
+	{"name": "mcw:mobile10","stream": false},
+	{"name": "mcw:mobile11","stream": false},
+	{"name": "mcw:mobile12","stream": false},
+	{"name": "mcw:mobile13","stream": false},
+	{"name": "mcw:mobile14","stream": false}
+				]
+	},
+	"raygun.players": { "category": "block", "sounds": [
+	{"name": "mcw:raygun1","stream": false},
+	{"name": "mcw:raygun2","stream": false},
+	{"name": "mcw:raygun3","stream": false},
+	{"name": "mcw:raygun4","stream": false}
+				]
+	},
+	"bullet.players": { "category": "block", "sounds": [
+	{"name": "mcw:bullet1","stream": false},
+	{"name": "mcw:bullet2","stream": false},
+	{"name": "mcw:bullet3","stream": false},
+	{"name": "mcw:bullet4","stream": false},
+	{"name": "mcw:bullet5","stream": false}
+				]
+	},
+"armygem.players": { "category": "block", "sounds": [
+	{"name": "mcw:armygem1","stream": false},
+	{"name": "mcw:armygem2","stream": false}
+				]
+	},
 "babymummy":{
 "category": "neutral",
 	"sounds": [
@@ -1342,5 +1386,69 @@
 	"sounds": [
 	{"name": "mcw:atomhurt","stream": false}
 				]
-	}
+	},
+"sneakysal.hurt":{
+"category": "neutral",
+	"sounds": [
+	{"name": "mcw:salhurt1","stream": false},
+	{"name": "mcw:salhurt2","stream": false},
+	{"name": "mcw:salhurt3","stream": false},
+	{"name": "mcw:salhurt4","stream": false},
+	{"name": "mcw:salhurt5","stream": false}
+				]
+	},
+"sneakysal.death":{
+"category": "neutral",
+	"sounds": [
+	{"name": "mcw:saldead1","stream": false},
+	{"name": "mcw:saldead2","stream": false}
+				]
+	},
+"sneakysal.greeting":{
+"category": "neutral",
+	"sounds": [
+	{"name": "mcw:salgreeting1","stream": false},
+	{"name": "mcw:salgreeting2","stream": false},
+	{"name": "mcw:salgreeting3","stream": false}
+				]
+	},
+"sneakysal.rats":{
+"category": "neutral",
+	"sounds": [
+	{"name": "mcw:salrats1","stream": false},
+	{"name": "mcw:salrats2","stream": false},
+	{"name": "mcw:salrats3","stream": false}
+				]
+	},
+"sneakysal.sale":{
+"category": "neutral",
+	"sounds": [
+	{"name": "mcw:salsale1","stream": false},
+	{"name": "mcw:salsale2","stream": false},
+	{"name": "mcw:salsale3","stream": false},
+	{"name": "mcw:salsale4","stream": false},
+	{"name": "mcw:salsale5","stream": false},
+	{"name": "mcw:salsale6","stream": false},
+	{"name": "mcw:salsale7","stream": false},
+	{"name": "mcw:salsale8","stream": false},
+	{"name": "mcw:salsale9","stream": false}
+				]
+	},
+"sneakysal.nomoney":{
+"category": "neutral",
+	"sounds": [
+	{"name": "mcw:salnomoney1","stream": false},
+	{"name": "mcw:salnomoney2","stream": false},
+	{"name": "mcw:salnomoney3","stream": false},
+	{"name": "mcw:salnomoney4","stream": false},
+	{"name": "mcw:salnomoney5","stream": false},
+	{"name": "mcw:salnomoney6","stream": false},
+	{"name": "mcw:salnomoney7","stream": false},
+	{"name": "mcw:salnomoney8","stream": false},
+	{"name": "mcw:salnomoney9","stream": false}
+				]
+	},
+"ggpig.mount": { "category": "block", "sounds": ["mcw:ggpigmount"]},
+"ggpig.unmount": { "category": "block", "sounds": ["mcw:ggpigunmount"]},
+"sneakysal.salnobodyshrinks": { "category": "block", "sounds": ["mcw:salnobodyshrinks"]}
 }

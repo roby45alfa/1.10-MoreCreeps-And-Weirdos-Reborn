@@ -1,12 +1,16 @@
 package com.rickweek.entities;
 
 import java.util.List;
+import java.util.UUID;
+
+import javax.annotation.Nullable;
 
 import com.rickweek.init.MCSoundEvents;
 import com.rickweek.main.Reference;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIBase;
@@ -17,9 +21,11 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.monster.EntityPigZombie;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -30,6 +36,7 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
 public class CREEPSEntityInvisibleMan extends EntityMob
@@ -41,6 +48,7 @@ public class CREEPSEntityInvisibleMan extends EntityMob
     private int randomSoundDelay;
     public float modelsize;
     public ResourceLocation texture;
+    private UUID angerTargetUUID;
 
     public CREEPSEntityInvisibleMan(World world)
     {
@@ -56,7 +64,7 @@ public class CREEPSEntityInvisibleMan extends EntityMob
         this.tasks.addTask(4, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true, new Class[0]));
         if(angerLevel > 0)
-        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
+        	this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
     }
     
     public void applyEntityAttributes()
@@ -70,6 +78,7 @@ public class CREEPSEntityInvisibleMan extends EntityMob
     /**
      * Called to update the entity's position/logic.
      */
+    /* 
     public boolean attackEntityFrom(DamageSource source, float amount)
     {
     	Entity entity = source.getEntity();
@@ -94,6 +103,64 @@ public class CREEPSEntityInvisibleMan extends EntityMob
             }
         }
 		return super.attackEntityFrom(source, amount);
+    } */
+    
+    public boolean attackEntityFrom(DamageSource source, float amount)
+    {
+        if (this.isEntityInvulnerable(source))
+        {
+            return false;
+        }
+        else
+        {
+            Entity entity = source.getEntity();
+
+            if (entity instanceof EntityPlayer)
+            {
+                this.becomeAngryAt(entity);
+                // texture = new ResourceLocation(Reference.MODID, Reference.TEXTURE_PATH_ENTITES + Reference.TEXTURE_INVISIBLEMAN_MAD);
+                angerLevel = rand.nextInt(15) + 5;
+            }
+            
+            if (rand.nextInt(30) == 0 && angerLevel > 0)
+            {
+                angerLevel--;
+
+                if (angerLevel == 0)
+                {
+                    worldObj.playSound((EntityPlayer) null, getPosition(), MCSoundEvents.ENTITY_INVISIBLEMAN_FORGETIT, SoundCategory.NEUTRAL, 1.0F, (rand.nextFloat() - rand.nextFloat()) * 0.2F + 1.0F);
+                    this.setAttackTarget(null);
+                    // texture = "mcw:textures/entity/invisibleman.png";
+                    texture = new ResourceLocation(Reference.MODID, Reference.TEXTURE_PATH_ENTITES + Reference.TEXTURE_INVISIBLEMAN);
+                }
+            }
+
+            return super.attackEntityFrom(source, amount);
+        }
+    }
+    
+    public void setRevengeTarget(@Nullable EntityLivingBase livingBase)
+    {
+        super.setRevengeTarget(livingBase);
+
+        if (livingBase != null)
+        {
+            this.angerTargetUUID = livingBase.getUniqueID();
+        }
+    }
+
+    /**
+     * Causes this PigZombie to become angry at the supplied Entity (which will be a player).
+     */
+    private void becomeAngryAt(Entity entity)
+    {
+        if (entity instanceof EntityLivingBase)
+        {
+            this.setRevengeTarget((EntityLivingBase)entity);
+        }
+        angerLevel += rand.nextInt(40);
+        // texture = "mcw:textures/entity/invisiblemanmad.png";
+        texture = new ResourceLocation(Reference.MODID, Reference.TEXTURE_PATH_ENTITES + Reference.TEXTURE_INVISIBLEMAN_MAD);
     }
 
     class AIAttackEntity extends EntityAIBase
@@ -124,6 +191,8 @@ public class CREEPSEntityInvisibleMan extends EntityMob
 		
     }
     
+    
+    
     /**
      * (abstract) Protected helper method to write subclass entity data to NBT.
      */
@@ -150,6 +219,11 @@ public class CREEPSEntityInvisibleMan extends EntityMob
     public int getMaxSpawnedInChunk()
     {
         return 1;
+    }
+    
+    protected void setEquipmentBasedOnDifficulty(DifficultyInstance difficulty)
+    {
+        this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(Items.STICK));
     }
 
     /**
@@ -218,6 +292,7 @@ public class CREEPSEntityInvisibleMan extends EntityMob
         return super.attackEntityFrom(DamageSource.causeMobDamage(this), i);
     }
 
+    /*
     private void becomeAngryAt(Entity entity)
     {
     	setRevengeTarget((EntityLivingBase) entity);
@@ -225,6 +300,7 @@ public class CREEPSEntityInvisibleMan extends EntityMob
         // texture = "mcw:textures/entity/invisiblemanmad.png";
         texture = new ResourceLocation(Reference.MODID, Reference.TEXTURE_PATH_ENTITES + Reference.TEXTURE_INVISIBLEMAN_MAD);
     }
+    */
 
     /**
      * Returns the sound this mob makes while it's alive.
@@ -283,5 +359,44 @@ public class CREEPSEntityInvisibleMan extends EntityMob
                     Items.STICK, Items.STICK, Items.STICK, Items.STICK, Items.GOLD_INGOT, Items.STICK, Items.STICK, Items.STICK, Items.APPLE, Items.APPLE,
                     Items.STICK
                 });
+    }
+   
+    public boolean isAngry()
+    {
+        return this.angerLevel > 0;
+    }
+    
+    static class AIHurtByAggressor extends EntityAIHurtByTarget
+    {
+        public AIHurtByAggressor(CREEPSEntityInvisibleMan p_i45828_1_)
+        {
+            super(p_i45828_1_, true, new Class[0]);
+        }
+
+        protected void setEntityAttackTarget(EntityCreature creatureIn, EntityLivingBase entityLivingBaseIn)
+        {
+            super.setEntityAttackTarget(creatureIn, entityLivingBaseIn);
+
+            if (creatureIn instanceof CREEPSEntityInvisibleMan)
+            {
+                ((CREEPSEntityInvisibleMan)creatureIn).becomeAngryAt(entityLivingBaseIn);
+            }
+        }
+    }
+
+    static class AITargetAggressor extends EntityAINearestAttackableTarget<EntityPlayer>
+    {
+        public AITargetAggressor(CREEPSEntityInvisibleMan p_i45829_1_)
+        {
+            super(p_i45829_1_, EntityPlayer.class, true);
+        }
+
+        /**
+         * Returns whether the EntityAIBase should begin execution.
+         */
+        public boolean shouldExecute()
+        {
+            return ((CREEPSEntityInvisibleMan)this.taskOwner).isAngry() && super.shouldExecute();
+        }
     }
 }
