@@ -447,7 +447,7 @@ public class CREEPSEntityCaveman extends EntityMob
      * Takes a coordinate in and returns a weight to determine how likely this creature will try to path to the block.
      * Args: x, y, z
      */
-    public float func_180484_a(BlockPos bp)
+    public float getBlockPathWeight(BlockPos bp)
     {
         if (worldObj.getBlockState(bp.down()) == Blocks.GRAVEL.getDefaultState() || worldObj.getBlockState(bp.down()) == Blocks.STONE.getDefaultState())
         {
