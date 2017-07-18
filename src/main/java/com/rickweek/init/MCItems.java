@@ -1,27 +1,54 @@
 package com.rickweek.init;
 
 import com.rickweek.items.Blorpcola;
+import com.rickweek.items.CREEPSItemArmSword;
+import com.rickweek.items.CREEPSItemArmyGem;
 import com.rickweek.items.CREEPSItemAtom;
 import com.rickweek.items.CREEPSItemBabyJarEmpty;
 import com.rickweek.items.CREEPSItemBabyJarFull;
 import com.rickweek.items.CREEPSItemBandAid;
 import com.rickweek.items.CREEPSItemBattery;
+import com.rickweek.items.CREEPSItemBullet;
 import com.rickweek.items.CREEPSItemCavemanClub;
 import com.rickweek.items.CREEPSItemDonut;
 import com.rickweek.items.CREEPSItemEarthGem;
 import com.rickweek.items.CREEPSItemEvilEgg;
+import com.rickweek.items.CREEPSItemExtinguisher;
 import com.rickweek.items.CREEPSItemFireGem;
+import com.rickweek.items.CREEPSItemFrisbee;
+import com.rickweek.items.CREEPSItemGemSword;
 import com.rickweek.items.CREEPSItemGooDonut;
+import com.rickweek.items.CREEPSItemGrowRay;
+import com.rickweek.items.CREEPSItemGrowRayRay;
+import com.rickweek.items.CREEPSItemGuineaPigRadio;
+import com.rickweek.items.CREEPSItemGun;
 import com.rickweek.items.CREEPSItemHealingGem;
+import com.rickweek.items.CREEPSItemHorseHeadGem;
 import com.rickweek.items.CREEPSItemLifeGem;
+import com.rickweek.items.CREEPSItemLimbs;
 import com.rickweek.items.CREEPSItemLolly;
 import com.rickweek.items.CREEPSItemMiningGem;
+import com.rickweek.items.CREEPSItemMobilePhone;
 import com.rickweek.items.CREEPSItemMoney;
+import com.rickweek.items.CREEPSItemMoopsWorm;
 import com.rickweek.items.CREEPSItemPopsicle;
 import com.rickweek.items.CREEPSItemRam16K;
+import com.rickweek.items.CREEPSItemRayGun;
+import com.rickweek.items.CREEPSItemRayRay;
+import com.rickweek.items.CREEPSItemShrinkRay;
 import com.rickweek.items.CREEPSItemSkyGem;
+import com.rickweek.items.CREEPSItemTombstone;
+import com.rickweek.items.CREEPSItemZebraHide;
+import com.rickweek.items.achievement.ACHIEVEMENTBubble;
+import com.rickweek.items.achievement.ACHIEVEMENTCamel;
+import com.rickweek.items.achievement.ACHIEVEMENTFloob;
+import com.rickweek.items.achievement.ACHIEVEMENTHell;
+import com.rickweek.items.achievement.ACHIEVEMENTHotDog;
+import com.rickweek.items.achievement.ACHIEVEMENTHotDog2;
+import com.rickweek.items.achievement.ACHIEVEMENTNonSwimmer;
+import com.rickweek.items.achievement.ACHIEVEMENTPig;
+import com.rickweek.items.achievement.ACHIEVEMENTPyramid;
 import com.rickweek.main.Reference;
-import com.rickweek.main.utils.Utils;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -31,6 +58,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class MCItems {
 	
+	// Items
 	public static Item Blorpcola;
 	public static Item Bandaid;
 	public static Item EmpyJar;
@@ -51,8 +79,50 @@ public class MCItems {
 	public static Item SkyGem;
 	public static Item LifeGem;
 	public static Item AtomPacket;
+	public static Item ZebraHide;
+	public static Item MobilePhone;
+	public static Item RayGun;
+	public static Item RayRay;
+	public static Item Gun;
+	public static Item Bullet;
+	public static Item ArmSword;
+	public static Item ArmorZebra;
+	public static Item ArmyGem;
+	public static Item Extinguisher;
+	public static Item Frisbee;
+	public static Item GrowRayRay;
+	public static Item GrowRay;
+	public static Item GemSword;
+	public static Item GGPigRadio;
+	public static Item Limbs;
+	public static Item Tombstone;
+	public static Item MoopsWorm;
+	public static Item HorseHeadGem;
+	public static Item ShrinkRay;
+	
+	// Achievement
+	public static Item aBubble;
+	public static Item aCamel;
+	public static Item aFloob;
+	public static Item aHell;
+	public static Item aHotDog;
+	public static Item aHotDog2;
+	public static Item aPig;
+	public static Item aNonSwimmer;
+	public static Item aPyramid;
 	
 	public static void init() {
+		// Init Items
+		ShrinkRay = new CREEPSItemShrinkRay("ShrinkRay", "ShrinkRay");
+		HorseHeadGem = new CREEPSItemHorseHeadGem("HorseHeadGem", "HorseHeadGem");
+		MoopsWorm = new CREEPSItemMoopsWorm("MoopsWorm", "MoopsWorm");
+		Tombstone = new CREEPSItemTombstone("Tombstone", "Tombstone");
+		Limbs = new CREEPSItemLimbs("Limbs", "Limbs");
+		GGPigRadio = new CREEPSItemGuineaPigRadio("GGPigRadio", "GGPigRadio");
+		GemSword = new CREEPSItemGemSword("GemSword", "GemSword");
+		GrowRay = new CREEPSItemGrowRay("GrowRay", "GrowRay");
+		GrowRayRay = new CREEPSItemGrowRayRay("GrowRayRay", "GrowRayRay");
+		Frisbee = new CREEPSItemFrisbee("Frisbee", "Frisbee");
 		Blorpcola = new Blorpcola("Blorpcola", "Blorpcola");
 		Bandaid = new CREEPSItemBandAid("Bandaid", "Bandaid");
 		EmpyJar = new CREEPSItemBabyJarEmpty("EmpyJar", "EmpyJar");
@@ -73,9 +143,33 @@ public class MCItems {
 		SkyGem = new CREEPSItemSkyGem("SkyGem", "SkyGem");
 		LifeGem = new CREEPSItemLifeGem("LifeGem", "LifeGem");
 		AtomPacket = new CREEPSItemAtom("AtomPacket", "AtomPacket");
+		ZebraHide = new CREEPSItemZebraHide("ZebraHide", "ZebraHide");
+		MobilePhone = new CREEPSItemMobilePhone("MobilePhone", "MobilePhone");
+		RayGun = new CREEPSItemRayGun("RayGun", "RayGun");
+		RayRay = new CREEPSItemRayRay("RayRay", "RayRay");
+		Gun = new CREEPSItemGun("Gun", "Gun");
+		Bullet = new CREEPSItemBullet("Bullet", "Bullet");
+		ArmSword = new CREEPSItemArmSword("ArmSword", "ArmSword");
+		ArmyGem = new CREEPSItemArmyGem("ArmyGem", "ArmyGem");
+		Extinguisher = new CREEPSItemExtinguisher("Extinguisher", "Extinguisher");
+		
+		// Init A-Items
+		aBubble = new ACHIEVEMENTBubble("aBubble", "aBubble");
+		aCamel = new ACHIEVEMENTCamel("aCamel", "aCamel");
+		aFloob = new ACHIEVEMENTFloob("aFloob", "aFloob");
+		aHell = new ACHIEVEMENTHell("aHell", "aHell");
+		aHotDog = new ACHIEVEMENTHotDog("aHotDog", "aHotDog");
+		aHotDog2 = new ACHIEVEMENTHotDog2("aHotDog2", "aHotDog2");
+		aPig = new ACHIEVEMENTNonSwimmer("aPig", "aPig");
+		aNonSwimmer = new ACHIEVEMENTPig("aNonSwimmer", "aNonSwimmer");
+		aPyramid = new ACHIEVEMENTPyramid("aPyramid", "aPyramid");
+		
 	}
 	
 	public static void register() {
+		// Register Items
+		registerItem(GrowRay);
+		registerItem(GrowRayRay);
 		registerItem(Blorpcola);
 		registerItem(Bandaid);
 		registerItem(EmpyJar);
@@ -96,10 +190,41 @@ public class MCItems {
 		registerItem(SkyGem);
 		registerItem(LifeGem);
 		registerItem(AtomPacket);
+		registerItem(ZebraHide);
+		registerItem(MobilePhone);
+		registerItem(RayGun);
+		registerItem(RayRay);
+		registerItem(Gun);
+		registerItem(Bullet);
+		registerItem(ArmSword);
+		registerItem(ArmyGem);
+		registerItem(Extinguisher);
+		registerItem(Frisbee);
+		registerItem(GemSword);
+		registerItem(GGPigRadio);
+		registerItem(Limbs);
+		registerItem(Tombstone);
+		registerItem(MoopsWorm);
+		registerItem(HorseHeadGem);
+		registerItem(ShrinkRay);
+		
+		// Register A-Items
+		registerItem(aBubble);
+		registerItem(aCamel);
+		registerItem(aFloob);
+		registerItem(aHell);
+		registerItem(aHotDog);
+		registerItem(aHotDog2);
+		registerItem(aNonSwimmer);
+		registerItem(aPig);
+		registerItem(aPyramid);
 	}
 	
 	public static void registerRenders() {
+		// Render Items
 		registerRender(Blorpcola);
+		registerRender(GrowRay);
+		registerRender(GrowRayRay);
 		registerRender(Bandaid);
 		registerRender(EmpyJar);
 		registerRender(FullJar);
@@ -119,6 +244,34 @@ public class MCItems {
 		registerRender(SkyGem);
 		registerRender(LifeGem);
 		registerRender(AtomPacket);
+		registerRender(ZebraHide);
+		registerRender(MobilePhone);
+		registerRender(RayGun);
+		registerRender(RayRay);
+		registerRender(Gun);
+		registerRender(Bullet);
+		registerRender(ArmSword);
+		registerRender(ArmyGem);
+		registerRender(Extinguisher);
+		registerRender(Frisbee);
+		registerRender(GemSword);
+		registerRender(GGPigRadio);
+		registerRender(Limbs);
+		registerRender(Tombstone);
+		registerRender(MoopsWorm);
+		registerRender(HorseHeadGem);
+		registerRender(ShrinkRay);
+		
+		// Render A-Items
+		registerRender(aBubble);
+		registerRender(aCamel);
+		registerRender(aFloob);
+		registerRender(aHell);
+		registerRender(aHotDog);
+		registerRender(aHotDog2);
+		registerRender(aNonSwimmer);
+		registerRender(aPig);
+		registerRender(aPyramid);
 	}
 	
 	public static void registerItem(Item item) {

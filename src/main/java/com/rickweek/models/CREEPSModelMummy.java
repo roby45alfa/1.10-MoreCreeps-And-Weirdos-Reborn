@@ -10,7 +10,7 @@ public class CREEPSModelMummy extends ModelBase
 	  //fields
 	    ModelRenderer head;
 	    ModelRenderer body;
-	    ModelRenderer rightarm;
+	    ModelRenderer mainhand;
 	    ModelRenderer leftarm;
 	    ModelRenderer rightleg;
 	    ModelRenderer leftleg;
@@ -32,12 +32,12 @@ public class CREEPSModelMummy extends ModelBase
 	      body.setTextureSize(64, 32);
 	      body.mirror = true;
 	      setRotation(body, 0F, 0F, 0F);
-	      rightarm = new ModelRenderer(this, 40, 16);
-	      rightarm.addBox(-3F, -2F, -2F, 4, 12, 4);
-	      rightarm.setRotationPoint(-5F, 2F, 0F);
-	      rightarm.setTextureSize(64, 32);
-	      rightarm.mirror = true;
-	      setRotation(rightarm, 0F, 0F, 0F);
+	      mainhand = new ModelRenderer(this, 40, 16);
+	      mainhand.addBox(-3F, -2F, -2F, 4, 12, 4);
+	      mainhand.setRotationPoint(-5F, 2F, 0F);
+	      mainhand.setTextureSize(64, 32);
+	      mainhand.mirror = true;
+	      setRotation(mainhand, 0F, 0F, 0F);
 	      leftarm = new ModelRenderer(this, 40, 16);
 	      leftarm.addBox(-1F, -2F, -2F, 4, 12, 4);
 	      leftarm.setRotationPoint(5F, 2F, 0F);
@@ -64,7 +64,7 @@ public class CREEPSModelMummy extends ModelBase
 	    setRotationAngles(f, f1, f2, f3, f4, f5);
 	    head.render(f5);
 	    body.render(f5);
-	    rightarm.render(f5);
+	    mainhand.render(f5);
 	    leftarm.render(f5);
 	    rightleg.render(f5);
 	    leftleg.render(f5);
@@ -84,7 +84,7 @@ public class CREEPSModelMummy extends ModelBase
 	    head.rotateAngleX = (headPitch / 57.295776F);
 	    leftleg.rotateAngleX = (MathHelper.cos(limbSwing * 1.0F) * -1.0F * limbSwingAmount);
 	    rightleg.rotateAngleX = (MathHelper.cos(limbSwing * 1.0F) * 1.0F * limbSwingAmount);
-	    rightarm.rotateAngleX = (MathHelper.cos(limbSwing * 0.6662F + 3.1415927F) * 2.0F * limbSwingAmount * 0.5F);
+	    mainhand.rotateAngleX = (MathHelper.cos(limbSwing * 0.6662F + 3.1415927F) * 2.0F * limbSwingAmount * 0.5F);
 	    leftarm.rotateAngleX = (MathHelper.cos(limbSwing * 0.6662F) * 2.0F * limbSwingAmount * 0.5F);
 	  }
 

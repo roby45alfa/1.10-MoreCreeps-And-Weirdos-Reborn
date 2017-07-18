@@ -46,6 +46,17 @@ public class ClientProxy extends CommonProxy {
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(MCW.partBarf, 0, new ModelResourceLocation("mcw:partBarf", "inventory"));
 	}
 	
+	/*
+	public void shrinkSmoke(World world, Entity entity)
+	{
+        for (int k = 0; k < 8; k++)
+        {
+            CREEPSFxSmoke creepsfxsmoke = new CREEPSFxSmoke(world, entity.posX, entity.posY, entity.posZ, MoreCreepsAndWeirdos.partShrink, 0.25F, 0);
+            creepsfxsmoke.renderDistanceWeight = 30D;
+            Minecraft.getMinecraft().effectRenderer.addEffect(creepsfxsmoke);
+        }
+	} */
+	
 	public void foam2(World world, CREEPSEntityAtom atom)
 	{
         for (int i1 = 0; (float)i1 < atom.atomsize; i1++)

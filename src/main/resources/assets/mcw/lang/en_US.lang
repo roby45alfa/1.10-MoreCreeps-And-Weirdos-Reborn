@@ -21,8 +21,38 @@ item.EarthGem.name=Earth Gem
 item.MiningGem.name=Mining Gem
 item.SkyGem.name=Sky Gem
 item.LifeGem.name=Life Gem
-item.partBarf.name=
+item.partBarf.name= 
 item.AtomPacket.name=Atom Packet
+item.ZebraHide.name=Zebra Hide
+item.RayGun.name=Ray Gun
+item.Gun.name=Gun
+item.Bullet.name=Bullet
+item.ArmSword.name=Arm Sword
+item.ArmorZebra.name=Zebra Helmet
+item.ArmyGem.name=Army Gem
+item.Extinguisher.name=Extinguisher
+item.Frisbee.name=Frisbee
+item.GrowRay.name=Grow Ray
+item.GemSword.name=Gem Sword
+item.GGPigRadio.name=GGPig Radio
+item.Limbs.name=Limbs
+item.Tombstone.name=Tombstone
+item.MoopsWorm.name=Moops Worm
+item.HorseHeadGem.name=HorseHead Gem
+item.MobilePhone.name=Mobile Phone
+item.ShrinkRay.name=Shrink Ray
+
+
+#Achievement
+item.aBubble.name= 
+item.aCamel.name= 
+item.aFloob.name= 
+item.aHell.name= 
+item.aHotDog.name= 
+item.aHotDog2.name= 
+item.aNonSwimmer.name= 
+item.aPig.name= 
+item.aPyramid.name= 
 
 #Entity
 entity.mcw.mummy.name=Mummy

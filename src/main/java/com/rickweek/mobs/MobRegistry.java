@@ -37,6 +37,7 @@ import com.rickweek.entities.CREEPSEntityRobotTed;
 import com.rickweek.entities.CREEPSEntityRobotTodd;
 import com.rickweek.entities.CREEPSEntityRockMonster;
 import com.rickweek.entities.CREEPSEntitySchlump;
+import com.rickweek.entities.CREEPSEntitySneakySal;
 import com.rickweek.entities.CREEPSEntityThief;
 import com.rickweek.entities.CREEPSEntityTrophy;
 import com.rickweek.main.MCW;
@@ -70,6 +71,7 @@ import com.rickweek.mob.renders.CREEPSRenderRobotTed;
 import com.rickweek.mob.renders.CREEPSRenderRobotTodd;
 import com.rickweek.mob.renders.CREEPSRenderRockMonster;
 import com.rickweek.mob.renders.CREEPSRenderSchlump;
+import com.rickweek.mob.renders.CREEPSRenderSneakySal;
 import com.rickweek.mob.renders.CREEPSRenderThief;
 import com.rickweek.mob.renders.CREEPSRenderTrophy;
 import com.rickweek.models.CREEPSModelAtom;
@@ -99,6 +101,7 @@ import com.rickweek.models.CREEPSModelRobotTed;
 import com.rickweek.models.CREEPSModelRobotTodd;
 import com.rickweek.models.CREEPSModelRockMonster;
 import com.rickweek.models.CREEPSModelSchlump;
+import com.rickweek.models.CREEPSModelSneakySal;
 import com.rickweek.models.CREEPSModelTrophy;
 
 public class MobRegistry {
@@ -145,6 +148,7 @@ public class MobRegistry {
 		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntitySchlump.class, new CREEPSRenderSchlump(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelSchlump(0.5F), 0.5F));
 		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityTrophy.class, new CREEPSRenderTrophy(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelTrophy(0.5F), 0.5F));
 		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntityAtom.class, new CREEPSRenderAtom(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelAtom(0.5F), 0.5F));
+		  RenderingRegistry.registerEntityRenderingHandler(CREEPSEntitySneakySal.class, new CREEPSRenderSneakySal(Minecraft.getMinecraft().getRenderManager(), new CREEPSModelSneakySal(0.5F), 0.5F));
 		  
 	  }
 	  
@@ -244,6 +248,9 @@ public class MobRegistry {
 			
 			EntityRegistry.registerModEntity(CREEPSEntityAtom.class, "atom", 331, MCW.instance, 64, 1, true, 16250871, 2106401);
 			EntityRegistry.addSpawn(CREEPSEntityAtom.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
+			
+			EntityRegistry.registerModEntity(CREEPSEntitySneakySal.class, "sneakysal", 332, MCW.instance, 64, 1, true, 16250871, 2106401);
+			EntityRegistry.addSpawn(CREEPSEntitySneakySal.class, 11, 1, 1, EnumCreatureType.MONSTER, new Biome[0]);
 	  }
 	
 }

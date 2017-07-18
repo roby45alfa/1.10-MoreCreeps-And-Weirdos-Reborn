@@ -5,6 +5,7 @@ import java.util.Random;
 import com.rickweek.entities.CREEPSEntityAtom;
 import com.rickweek.entities.CREEPSEntityTrophy;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.MathHelper;
@@ -17,6 +18,8 @@ public class CommonProxy {
 	public void registerRenders() {
 		
 	}
+	
+	public void shrinkSmoke(World world, Entity entity){}
 
 	public void robotTedSmoke(World worldObj, double posX, double posY,
 			double posZ, int floattimer, double modelspeed) {		
