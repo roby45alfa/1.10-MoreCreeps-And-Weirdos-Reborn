@@ -165,7 +165,7 @@ public class CREEPSEntityBlorp extends EntityMob
     }
 
     //previously called : getBlockpathWeight
-    public float func_180484_a(BlockPos bp)
+    public float getBlockPathWeight(BlockPos bp)
     {
         if (worldObj.getBlockState(bp.down()).getBlock() == Blocks.LEAVES || worldObj.getBlockState(bp.down()).getBlock() == Blocks.LOG)
         {

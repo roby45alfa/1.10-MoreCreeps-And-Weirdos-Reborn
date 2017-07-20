@@ -104,7 +104,7 @@ public class CREEPSEntityRatMan extends EntityMob
      * Args: x, y, z
      */
     //the old "getBlockPathHeight" or something called like this
-    public float func_180484_a(BlockPos bp)
+    public float getBlockPathWeight(BlockPos bp)
     {
         if (worldObj.getBlockState(bp.down()).getBlock() == Blocks.SAND || worldObj.getBlockState(bp.down()).getBlock() == Blocks.GRAVEL)
         {

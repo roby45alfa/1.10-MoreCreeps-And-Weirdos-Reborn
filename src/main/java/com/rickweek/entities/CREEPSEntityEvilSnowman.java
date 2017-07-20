@@ -206,7 +206,7 @@ public class CREEPSEntityEvilSnowman extends EntityMob
     /**
      * knocks back this entity
      */
-    public void knockBack(Entity entity, int i, double d, double d1)
+    public void knockBack(Entity entity, float i, double d, double d1)
     {
         for (int j = 0; j < 8 + (int)(snowsize * 20F); j++)
         {

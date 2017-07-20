@@ -595,7 +595,7 @@ public class CREEPSEntityDigBug extends EntityMob
     /**
      * Returns the item ID for the item the mob drops on death.
      */
-    protected Item getDropItemId()
+    protected Item getDropItem()
     {
         return dropItems[rand.nextInt(dropItems.length)];
     }

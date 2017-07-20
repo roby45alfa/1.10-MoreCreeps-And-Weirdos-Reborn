@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Random;
 
 import com.rickweek.init.MCSoundEvents;
-import com.rickweek.main.MCW;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCreature;
@@ -16,6 +15,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
@@ -275,7 +275,7 @@ public class CREEPSEntityAtom extends EntityFlying
         return MCSoundEvents.ATOM_DEAD;
     }
 
-    public void onDeath(){
+    public void onDeath(DamageSource source){
     	
     	//Don't know what it was before, but assumed it was to get the dropped items
         Item[] dropItems = (new Item[]

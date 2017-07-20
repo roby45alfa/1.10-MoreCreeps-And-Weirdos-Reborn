@@ -64,7 +64,7 @@ public class CREEPSEntityCastleCritter extends EntityMob
      * Takes a coordinate in and returns a weight to determine how likely this creature will try to path to the block.
      * Args: x, y, z
      */
-    public float func_180484_a(BlockPos bp)
+    public float getBlockPathWeight(BlockPos bp)
     {
         if (worldObj.getBlockState(bp.down()).getBlock() == Blocks.DOUBLE_STONE_SLAB || worldObj.getBlockState(bp.down()) == Blocks.STONE_SLAB)
         {
